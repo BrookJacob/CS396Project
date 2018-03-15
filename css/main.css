@@ -18,6 +18,23 @@ body {
   padding: 0px;
   z-index: 1000;
 }
+.search-bar {
+	position:fixed;
+	top:12px;
+	right:20px;
+	font-family: "merriweather"
+}
+.main-search-bar {
+	margin:auto;
+	height:50px;
+	width:500px;
+	font-family: "merriweather";
+	font-size:1.25em;
+}
+.searchdiv {
+	width: 100%;
+	margin-top:250px;
+}
 .menu-buttons {
   list-style-type: none;
   margin: 0;
