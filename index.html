@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Library Books</title>
+        <title>library books</title>
         <link href="css/main.css" type="text/css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     </head>
     <body class="splash">
         <div class="menu-bar">
             <ul class="menu-buttons">
-                <li class="menu-button"><a class="menu-button-link" href="index.html">Library Books.</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="index.html">library books</a></li>
 				<li class="menu-button"><a class="menu-button-link" href="library.html">library</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="about.html">about</a></li>
 				<li class="menu-button"><a class="menu-button-link" href="feedback.html">feedback</a></li>
             </ul>
-			<form class="search">
-				<input class="search-bar" type="text" name="search-bar" value="Search">
-			</form>
-			<div class="searchdiv">
-			<form class="main-search-bar">
-				<input class="main-search-bar" type="text" name="main-search-bar" value="Find Books">
-			</form>	
-			</div>
         </div>
+        <div class="searchdiv">
+            <form class="main-search-bar">
+                <input class="main-search-bar" type="text" name="main-search-bar" value="find books">
+            </form>	
+        </div>
+        <div class="feedback-form-container">
+            <p>feedback</p>
+			<form class="feedback-form" action="test.php" method="post">
+				<input class="feedback-input" type="text" name="first" placeholder="name"><br>
+				<input class="feedback-input" type="text" name="email" placeholder="email"><br>
+				<textarea class="feedback-input" name="feedback" placeholder="feedback"></textarea><br>
+				<input class="feedback-input submit" type="submit" name="submit" >
+			</form>
+		</div>
     </body>
 </html>
