@@ -112,6 +112,7 @@ input:focus {
 }*/
 .feedback-form-container {
   background-color: #333333;
+  width: 100%;
 }
 .feedback-form-container p {
   text-align: center;
@@ -120,8 +121,7 @@ input:focus {
   padding-top: 20px;
 }
 .feedback-form {
-  margin-left: 50vw;
-  margin-right: 50vw;
+
 }
 .feedback-input {
   border: none;
