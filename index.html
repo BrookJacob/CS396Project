@@ -8,16 +8,18 @@
     <body class="splash">
         <div class="menu-bar">
             <ul class="menu-buttons">
-                <li class="menu-button"><a class="menu-button-link" href="index.html">library</a></li>
-				<li class="menu-button"><a class="menu-button-link" href="library.html">books</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="index.html">library books</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="library.html">my library</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="library.html">about</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="#feedback">feedback</a></li>
             </ul>
         </div>
         <div class="searchdiv">
             <form class="main-search-bar">
-                <input class="main-search-bar" type="text" name="main-search-bar" value="find books">
+                <input class="main-search-bar" type="text" name="main-search-bar" placeholder="find books">
             </form>	
         </div>
-        <div class="feedback-form-container">
+        <div class="feedback-form-container" id="feedback">
             <p>feedback</p>
 			<form class="feedback-form" action="test.php" method="post">
 				<input class="feedback-input" type="text" name="first" placeholder="name"><br>
