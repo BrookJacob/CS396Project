@@ -8,7 +8,7 @@
      //Establishes the connection
      $conn = sqlsrv_connect($serverName, $connectionOptions);
      $search = $_POST["search"];
-     $tsql = "SELECT b.Title FROM books b WHERE b.Title LIKE '%" . $search . "%'";
+     $tsql = "SELECT b.title FROM books b WHERE b.title LIKE '%" . $search . "%'";
      $getResults = sqlserv_query($conn, $tsql);
      echo ("Reading data from table" . PHP_EOL);
      if ($getResults == FALSE)
