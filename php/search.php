@@ -16,5 +16,7 @@
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         echo ($row['Title']. " " . PHP_EOL);
     }
+    echo $search;
+    echo $tsql;
     sqlsrv_free_stmt($getResults);
 ?>
