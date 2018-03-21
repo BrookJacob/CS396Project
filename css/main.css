@@ -113,18 +113,27 @@ input:focus {
 .feedback-form-container {
   background-color: #333333;
   width: 100%;
+  height: 50vh;
 }
 .feedback-form-container p {
   text-align: center;
   font-size: 2em;
-  margin: 20px;
+  width: 10%;
+  margin: 12px auto;
   padding-top: 20px;
 }
 .feedback-form {
-
+  position: relative;
+  width: 20%;
+  margin: auto;
 }
 .feedback-input {
   border: none;
+  width: 100%;
+  margin: 8px;
+}
+.submit {
+
 }
 .slideshow-container {
   max-width: 1000px;
