@@ -10,8 +10,8 @@
             <ul class="menu-buttons">
                 <li class="menu-button"><a class="menu-button-link" href="index.html">library books</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="library.html">my library</a></li>
-                <li class="menu-button"><a class="menu-button-link" href="library.html">about</a></li>
-                <li class="menu-button"><a class="menu-button-link" href="#feedback">feedback</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="index.html#about">about</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="index.html#feedback">feedback</a></li>
             </ul>
         </div>
         <div class="searchdiv">
@@ -19,14 +19,42 @@
                 <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre">
             </form>	
         </div>
+        <div class="about" id="about">
+			<p class="product-description">library books is a book review aggregation website that provides users with ratings for a given book from various sources on the internet. users will be able to add books to a personal virtual library and view recommendations based on their library.</p>
+			<div class="team-description">
+                <p>library books is currently being developed by two Whitworth University juniors.</p>
+				<div class="Bridget">
+                    <img src="images/bridget.png" />
+					<p class="Bridget-Description">Bridget is a Sociology major who loves reading.</p>
+				</div>
+				<div class="Jacob">
+                    <img src="images/BrookJacob.jpg" />
+					<p class="Jacob-description">Jacob is a Computer Science major who doesn't read enough.</p>
+				</div>
+			</div>
+        </div>
+        <div class="slideshow-container">
+            <div class="slideshow">					
+			    <div class="mySlides fade">
+			    	<img src="images/indexExample.jpg" style="width:100%">
+			    </div>
+			    <div class="mySlides fade">
+			    	<img src="images/searchExample.jpg" style="width:100%">
+			    </div>
+			    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			    <br>
+            </div>
+        </div>
         <div class="feedback-form-container" id="feedback">
             <p>feedback</p>
 			<form class="feedback-form" action="feedback.php" method="post">
 				<input class="feedback-input" type="text" name="first" placeholder="name"><br>
 				<input class="feedback-input" type="text" name="email" placeholder="email"><br>
 				<textarea class="feedback-input" name="feedback" placeholder="feedback"></textarea><br>
-				<input class="feedback-input submit" type="submit" name="submit" >
+				<input class="feedback-input submit" type="submit" name="submit" value="submit" >
 			</form>
-		</div>
+        </div>
+        <script type="text/javascript" src="js/slideshow.js"></script>
     </body>
 </html>
