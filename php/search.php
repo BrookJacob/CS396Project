@@ -12,7 +12,7 @@
      $getResults = sqlserv_query($conn, $tsql);
      echo ("Reading data from table" . PHP_EOL);
      if ($getResults == FALSE)
-        echo (sqlsrv_errors());
+        echo ("help");
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         echo ($row['title']. " " . PHP_EOL);
     }
