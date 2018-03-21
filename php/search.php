@@ -8,7 +8,7 @@
      //Establishes the connection
      $conn = sqlsrv_connect($serverName, $connectionOptions);
      $search = $_POST["search"];
-     $tsql = "SELECT title FROM books WHERE title LIKE '%$search%'";
+     $tsql = "SELECT title FROM books WHERE title = '1984'";
      $getResults = sqlserv_query($conn, $tsql);
      echo ("Reading data from table" . PHP_EOL);
      if ($getResults == FALSE)
@@ -16,7 +16,5 @@
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         echo ($row['title']. " " . PHP_EOL);
     }
-    echo $search;
-    echo $tsql;
     sqlsrv_free_stmt($getResults);
 ?>
