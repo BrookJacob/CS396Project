@@ -14,13 +14,10 @@
         die( print_r( sqlsrv_errors(), true));
     }
     $search = $_REQUEST['main-search-bar'];
-	echo $search;
 	$sql = "SELECT b.ISBN, b.title, b.author, g.genreName FROM books AS b, genre as G WHERE title LIKE '%". $search . "%' AND b.genreID = g.genreID";
-	echo $sql;
     $stmt = sqlsrv_query( $conn, $sql);
-	echo $stmt;
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo $row['ISBN'].", ".$row['title'].", ".$row['author'].", ".$row['genre.genreName']."<br />";
+		echo $row['ISBN'].", ".$row['title'].", ".$row['author'].", ".$row['genreName']."<br />";
 	}
     
     sqlsrv_close( $conn );
