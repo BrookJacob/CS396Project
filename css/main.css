@@ -53,9 +53,18 @@ body {
   height: 100vh;
   padding-top: 45vh;
 }
+.mylibrary {
+	background-image: url("../images/bookshelf.jpg");
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+}
+.search{
+	overflow: hidden;
+}
 .search-bar {
 	position:fixed;
-	top:17px;
+	top: 17px;
 	right:20px;
   font-family: "merriweather";
   border: none;
