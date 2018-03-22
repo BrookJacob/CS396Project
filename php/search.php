@@ -20,7 +20,7 @@
     $stmt = sqlsrv_query( $conn, $sql);
 	echo $stmt;
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo $row['ISBN'].", ".$row['title'].", ".$row['author'].", ".$row['genre']."<br />";
+		echo $row['ISBN'].", ".$row['title'].", ".$row['author'].", ".$row['genreName']."<br />";
 	}
     
     sqlsrv_close( $conn );
