@@ -13,11 +13,7 @@
         echo "Connection could not be established. <br />";
         die( print_r( sqlsrv_errors(), true));
     }
-    if( isset($_POST['search'])){
-		if( isset($_GET['go'])){
-			$search = $_POST['search'];
-		}
-	}
+    $search = $_POST['search'];
 	$sql = "SELECT b.ISBN, b.title, b.author, g.genreName FROM books AS b, genre as G WHERE title LIKE '%". $search . "%' AND b.genreID = g.genreID";
     $stmt = sqlsrv_query( $conn, $sql);
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
