@@ -17,8 +17,19 @@
 ?>
 <hmtl>
 <head>
-</head>
-<body>
+        <title>library books</title>
+        <link href="css/main.css" type="text/css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    </head>
+    <body class="splash">
+        <div class="menu-bar">
+            <ul class="menu-buttons">
+                <li class="menu-button"><a class="menu-button-link" href="index.html">library books</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="library.html">my library</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="index.html#about">about</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="index.html#feedback">feedback</a></li>
+            </ul>
+        </div>
 <?php
     $search = $_REQUEST['main-search-bar'];
 	$sql = "SELECT b.ISBN, b.title, b.author, g.genreName FROM books AS b, genre as G WHERE b.title LIKE '%". $search . "%' OR b.author LIKE '%". $search . "%' OR b.ISBN LIKE '%". $search . "%' OR g.genreName LIKE '%". $search . "%' AND b.genreID = g.genreID";
