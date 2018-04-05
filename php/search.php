@@ -2,6 +2,7 @@
 	$file = fopen("../../../data/connection.txt", "r") or die("Unable to open file!");
 	$psswrd = fread($file);
 	echo $psswrd;
+	echo "hello";
 	fclose($file);
 	
     $serverName = "librarybooks.database.windows.net";
