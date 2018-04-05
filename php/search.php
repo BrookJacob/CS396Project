@@ -1,6 +1,6 @@
 <?php
     $serverName = "librarybooks.database.windows.net";
-    $connectionInfo = array("UID" => "LBADMIN@librarybooks", "pwd" => "Pirate88", "Database" => "librarybooks", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+	$connectionOptions = array( "Database" => "librarybooks", "Uid" => "LBAdmin", "PWD" => "Pirate88");
     echo $connectionOptions;
     
     //Establishes the connection
