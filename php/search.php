@@ -5,7 +5,7 @@
 	fclose($file);
 	
     $serverName = "librarybooks.database.windows.net";
-	$connectionOptions = array( "Database" => "librarybooks", "Uid" => "LBAdmin", "PWD" => "Pirate88");
+	$connectionOptions = array( "Database" => "librarybooks", "Uid" => "LBAdmin", "PWD" => "".$psswrd."");
     
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
