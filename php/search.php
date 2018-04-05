@@ -1,3 +1,10 @@
+<html>
+	<head>
+	</head>
+	<body>
+	hello
+	</body>
+</html>
 <?php
 	$file = fopen("../../../data/connection.txt", "r") or die("Unable to open file!");
 	$psswrd = fread($file, 8);
