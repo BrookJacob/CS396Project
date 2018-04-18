@@ -14,12 +14,12 @@
             </ul>
         </div>
 <?php
-	$file = fopen("../../../data/connection.txt", "r") or die("Unable to open file!");
+	$file = fopen("../../../LogFiles/connection.txt", "r") or die("Unable to open file!");
 	$psswrd = fread($file, 8);
 	fclose($file);
 	
-    $serverName = "librarybooks.database.windows.net";
-	$connectionOptions = array( "Database" => "librarybooks", "Uid" => "LBAdmin", "PWD" => "".$psswrd."");
+    $serverName = "lb2.database.windows.net";
+	$connectionOptions = array( "Database" => "librarybooks", "Uid" => "LB2Admin", "PWD" => "".$psswrd."");
     
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
