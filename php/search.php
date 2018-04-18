@@ -30,7 +30,7 @@
         die( print_r( sqlsrv_errors(), true));
     }
     $search = $_REQUEST['main-search-bar'];
-	$sql = "SELECT b.ISBN, b.title, b.author, g.genreName FROM books AS b, genre as G WHERE b.title LIKE '%". $search . "%' OR b.author LIKE '%". $search . "%' OR b.ISBN LIKE '%". $search . "%' OR g.genreName LIKE '%". $search . "%' AND b.genreID = g.genreID";
+	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genre as g WHERE b.title LIKE '%". $search . "%' OR b.author LIKE '%" . $search . "%' OR b.ISBN13 = " . $search . " OR g.genreName LIKE '%" . $search . "%' AND b.genreID = g.genreID";
     $stmt = sqlsrv_query( $conn, $sql);
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo $row['ISBN'].", ".$row['title'].", ".$row['author'].", ".$row['genreName']."<br />";
