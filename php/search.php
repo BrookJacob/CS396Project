@@ -15,7 +15,7 @@
         </div>
 <?php
 	$file = fopen("../../../LogFiles/connection.txt", "r") or die("Unable to open file!");
-	$psswrd = fread($file, 8);
+	$psswrd = fread($file, 11);
 	fclose($file);
 	
     $serverName = "lb2.database.windows.net";
