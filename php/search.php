@@ -13,6 +13,8 @@
                 <li class="menu-button"><a class="menu-button-link" href="index.html#feedback">feedback</a></li>
             </ul>
         </div>
+        <div class="search-results-container">
+            <ul class="search-results-list">
 <?php
 	$file = fopen("../../../LogFiles/connection.txt", "r") or die("Unable to open file!");
 	$psswrd = fread($file, 11);
@@ -30,13 +32,15 @@
         die( print_r( sqlsrv_errors(), true));
     }
     $search = $_REQUEST['main-search-bar'];
-	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genre as g WHERE b.title LIKE '%". $search . "%' OR b.author LIKE '%" . $search . "%' OR b.ISBN13 = " . $search . " OR g.genreName LIKE '%" . $search . "%' AND b.genreID = g.genreID";
-    $stmt = sqlsrv_query( $conn, $sql);
+	$sql = "SELECT SUM(ISBN13), b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genre as g WHERE b.title LIKE '%". $search . "%' OR b.author LIKE '%" . $search . "%' OR b.ISBN13 = " . $search . " OR g.genreName LIKE '%" . $search . "%' AND b.genreID = g.genreID";
+    $stmt = sqlsrv_query( $conn, $sql); 
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo $row['ISBN'].", ".$row['title'].", ".$row['author'].", ".$row['genreName']."<br />";
+		echo "<li class='search-result'>" . $row['ISBN13'].", ".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
     
     sqlsrv_close( $conn );
 ?>
+            </ul>
+        </div>
 </body>
 </html>
