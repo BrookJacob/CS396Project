@@ -196,9 +196,3 @@ textarea {
   resize: vertical;
   font-family: "Merriweather";
 }
-.search-result {
-  background-image: url("../images/bookshelf.jpg");
-  background-attachment: fixed;
-  width: 100%;
-  height: 100vh;
-}
