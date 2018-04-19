@@ -17,13 +17,17 @@
         <div class="backsplash">
             <form class="login" action="register.php" method="post">
 				<h>sign up</h>
-				<input type="text" placeholder="username">
+				<input type="text" placeholder="username" name="username">
 				<input type="text" placeholder="password">
 				<input type="submit" value="submit">
 			</form>
 <?php
 	require("common.php");
     
+    if(!empty($_POST))
+    {
+        if(empty($_POST['username']))
+    }
     
     sqlsrv_close( $conn );
 ?>
