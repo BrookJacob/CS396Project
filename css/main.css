@@ -60,6 +60,10 @@ body {
   position: fixed;
   right: 0;
 }
+.sign-up {
+	position: fixed;
+	right: 85.5px;
+}
 .hidden {
   display: none;
 }
@@ -222,4 +226,18 @@ textarea {
   border-width: 0px 0px 1px 0px;
   border-color: #006989;
   border-style: solid;
+}
+.login {
+  background-color: #333333;
+  top: 200px;
+  width: 70%;
+  height: 70%;
+  margin: 150px auto;
+  border-bottom: 3px solid #006989;
+  
+}
+.login h {
+  display: block;
+  text-align: center;
+  font-size: 3em;
 }
