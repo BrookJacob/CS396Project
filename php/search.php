@@ -15,8 +15,8 @@
         </div>
         <div class="search-return">
             <ul class="search-results">
-                <li class="search-result">1984, George Orwell, Science Fiction</li>
-                <li class="search-result">Martian Chronicles, Ray Bradbury, Science Fiction</li>
+                <!--<li class="search-result">1984, George Orwell, Science Fiction</li>
+                <li class="search-result">Martian Chronicles, Ray Bradbury, Science Fiction</li>-->
 <?php
 	$file = fopen("../../../LogFiles/connection.txt", "r") or die("Unable to open file!");
 	$psswrd = fread($file, 11);
