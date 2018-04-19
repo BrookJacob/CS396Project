@@ -48,6 +48,10 @@ body {
 .menu-button-link:hover {
   background-color: #222222;
 }
+.sign-in {
+  position: fixed;
+  right: 0;
+}
 .hidden {
   display: none;
 }
@@ -204,7 +208,8 @@ textarea {
   background-image: url("../images/bookshelf.jpg");
   background-attachment: fixed;
 }
-.search-results { 
+.search-results {
+  height: 100%;
   margin: 200px 200px 0px 200px;
   padding: 20px;
   list-style-type: none;
@@ -217,7 +222,4 @@ textarea {
   border-width: 0px 0px 1px 0px;
   border-color: #006989;
   border-style: solid;
-}
-.search-results:last-child {
-  border-width: 0px 0px 0px 0px;
 }
