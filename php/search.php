@@ -11,7 +11,7 @@
                 <li class="menu-button"><a class="menu-button-link" href="../index.html#about">about</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="../index.html#feedback">feedback</a></li>
                 <li class="menu-button sign-in"><a class="menu-button-link" href="../account.html">sign in</a></li>
-                <li class="menu-button sign-up"><a class="menu-button-link" href="../account.html">sign up</a></li>
+                <li class="menu-button sign-up"><a class="menu-button-link" href="../register.php">sign up</a></li>
             </ul>
         </div>
         <div class="backsplash">
