@@ -1,8 +1,6 @@
 <?php
     $serverName = "librarybooks.database.windows.net";
     $connectionOptions = getenv('SQLCONNSTR_LibraryBooks');
-    echo $connectionOptions;
-    
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     if( $conn ) {
