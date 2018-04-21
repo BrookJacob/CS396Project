@@ -24,10 +24,12 @@
 <?php
 	require("common.php");
     
-    if(!empty($_POST))
+    /*if(!empty($_POST))
     {
-        if(empty($_POST['username']))
-    }
+        if(empty($_POST['username'])){
+
+        };
+    };*/
     
     sqlsrv_close( $conn );
 ?>
