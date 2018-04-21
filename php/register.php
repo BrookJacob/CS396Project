@@ -16,20 +16,39 @@
         </div>
         <div class="backsplash">
             <form class="login" action="register.php" method="post">
-				<h>sign up</h>
+                <h>sign up</h>
+                <input type="text" placeholder="first name" name="first-name">
+                <input type="text" placeholder="last name" name="last-name">
+                <input type="text" placeholder="email" name="email">
 				<input type="text" placeholder="username" name="username">
-				<input type="text" placeholder="password">
+                <input type="text" placeholder="password" name="password">
+                <input type="text" placeholder="confirm password" name="confirm-password">
 				<input type="submit" value="submit">
 			</form>
 <?php
 	require("common.php");
     
-    /*if(!empty($_POST))
+    if(!empty($_POST))
     {
+        if(empty($_POST['first-name'])){
+            die("please enter your first name.");
+        }
+        if(empty($_POST['last-name'])){
+            die("please enter your last name.");
+        }
+        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+            die("please enter your email.");
+        }
         if(empty($_POST['username'])){
-
-        };
-    };*/
+            die("please enter a username.");
+        }
+        if(empty($_POST['password'])){
+            die("please enter an password");
+        }
+        if(empty($_POST['confirm-password'])){
+            die("please confirm your password.");
+        }
+    }
     
     sqlsrv_close( $conn );
 ?>
