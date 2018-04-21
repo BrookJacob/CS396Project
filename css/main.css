@@ -15,12 +15,6 @@ body {
   height: 100%;
   width: 100%;
 }
-.menu-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 50px;
-}
 .menu-buttons {
   list-style-type: none;
   margin: 0;
@@ -33,8 +27,9 @@ body {
   float: left;
   margin: auto;
   height: 50px;
+  z-index: 100;
   font-family: 'Merriweather', serif;
-   border-bottom: 3px solid #006989;
+  border-bottom: 3px solid #006989;
 }
 .menu-button-link {
   display: block;
@@ -48,6 +43,11 @@ body {
   background-color: #222222;
   border-bottom: 3px solid #005878;
 }
+.cheat {
+  width: 100%;
+  height: 50px;
+  border-bottom: 3px solid #006989;
+}
 .backsplash {
   width: 100%;
   height: 100%;
@@ -56,13 +56,8 @@ body {
   background-image: url("../images/bookshelf.jpg");
   background-attachment: fixed;
 }
-.sign-in {
-  position: fixed;
-  right: 0;
-}
-.sign-up {
-	position: fixed;
-	right: 85.5px;
+.menu-right {
+  float: right;
 }
 .hidden {
   display: none;
@@ -102,7 +97,7 @@ body {
 .about {
   background-color: #333333;
   width: 100%;
-  height: 60vh;
+  height: 650px;
   padding-top: 50px;
 }
 .about p {
@@ -134,27 +129,23 @@ body {
   margin: auto;
 }
 .feedback-form-container {
-  background-color: #333333;
-  padding-top: 50px;
-  width: 100%;
-  height: 400px;
-}
-.feedback-form-container p {
-  text-align: center;
-  font-size: 2em;
-  width: 10%;
-  margin: 12px auto;
-  padding-top: 20px;
+  background-image: url("../images/bookshelfdoor.jpg");
+  background-attachment: fixed;
+  padding: 50px;
 }
 .feedback-form {
-  position: relative;
-  width: 20%;
-  margin: auto;
+  background-color: #333333;
+  height: 250px;
+  width: 100%;
+}
+.feedback-form p {
+  font-size: 2em;
+  text-align: center;
 }
 .feedback-input {
-  border: none;
-  width: 100%;
-  margin: 8px;
+ width: 50%;
+ display: block;
+ margin: auto;
 }
 textarea {
   resize: vertical;

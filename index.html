@@ -11,8 +11,9 @@
                 <li class="menu-button"><a class="menu-button-link" href="index.html">library books</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="index.html#about">about</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="index.html#feedback">feedback</a></li>
-                <li class="menu-button sign-in"><a class="menu-button-link" href="account.html">sign in</a></li>
-                <li class="menu-button sign-up"><a class="menu-button-link" href="php/register.php">sign up</a></li>
+                <li class="menu-button menu-right"><a class="menu-button-link" href="account.html">sign in</a></li>
+                <li class="menu-button menu-right"><a class="menu-button-link" href="php/register.php">sign up</a></li>
+                <li class="cheat"></li>
         </div>
         <div class="searchdiv">
             <form class="main-search-bar" name="search" action="php/search.php?go" method="post">
@@ -34,9 +35,9 @@
 			</div>
         </div>
         <div class="feedback-form-container" id="feedback">
-            <p>feedback</p>
 			<form class="feedback-form" action="php/feedback.php" method="post">
-				<input class="feedback-input" type="text" name="first" placeholder="name"><br>
+                <p>feedback</p>
+                <input class="feedback-input" type="text" name="first" placeholder="name"><br>
 				<input class="feedback-input" type="text" name="email" placeholder="email"><br>
 				<textarea class="feedback-input" name="feedback" placeholder="feedback"></textarea><br>
 				<input class="feedback-input submit" type="submit" name="submit" value="submit" >
