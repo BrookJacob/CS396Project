@@ -187,3 +187,6 @@ textarea {
   text-align: center;
   font-size: 3em;
 }
+.signup-input {
+  z-index: 100;
+}

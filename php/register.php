@@ -11,20 +11,20 @@
                 <li class="menu-button"><a class="menu-button-link" href="../index.html#about">about</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="../index.html#feedback">feedback</a></li>
                 <li class="menu-button menu-right"><a class="menu-button-link" href="account.html">sign in</a></li>
-                <li class="menu-button menu-right"><a class="menu-button-link" href="php/register.php">sign up</a></li>
+                <li class="menu-button menu-right"><a class="menu-button-link" href="register.php">sign up</a></li>
                 <li class="cheat"></li>
             </ul>
         </div>
         <div class="backsplash">
             <form class="login" action="register.php" method="post">
                 <h>sign up</h>
-                <input type="text" placeholder="first name" name="first-name">
-                <input type="text" placeholder="last name" name="last-name">
-                <input type="text" placeholder="email" name="email">
-				<input type="text" placeholder="username" name="username">
-                <input type="text" placeholder="password" name="password">
-                <input type="text" placeholder="confirm password" name="confirm-password">
-				<input type="submit" value="submit">
+                <input class="signup-input" type="text" placeholder="first name" name="first-name">
+                <input class="signup-input" type="text" placeholder="last name" name="last-name">
+                <input class="signup-input" type="text" placeholder="email" name="email">
+				<input class="signup-input" type="text" placeholder="username" name="username">
+                <input class="signup-input" type="text" placeholder="password" name="password">
+                <input class="signup-input" type="text" placeholder="confirm password" name="confirm-password">
+				<input class="signup-input" type="submit" value="submit">
 			</form>
 <?php
 	require("common.php");
