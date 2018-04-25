@@ -24,7 +24,8 @@
     echo $search;
     $stmt = sqlsrv_prepare( $conn, $sql, array( &$search ));
     echo $stmt;
-    sqlsrv_execute( $stmt );
+    $stmt = sqlsrv_execute( $stmt );
+    echo $stmt;
     if( $stmt === false){
         die( print_r( sqlsrv_errors(), true) );
     }
