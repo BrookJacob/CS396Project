@@ -52,6 +52,16 @@
         $params = array( &$username );
         $sql = "SELECT 1 FROM users WHERE username = '?'";
         $stmt = sqlsrv_query( $conn, $sql, $params );
+        if ( $stmt === true){
+            die("username is already taken");
+        }
+        $email = $_POST['email'];
+        $params = array( &$email );
+        $sql = "SELECT 1 FROM users WHERE email = '?'";
+        $stmt = sqlsrv_query( $query, $sql, $params );
+        if ( $stmt === true){
+            die("email is already taken");
+        }
 
     }
     
