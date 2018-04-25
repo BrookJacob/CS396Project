@@ -22,7 +22,10 @@
     $search = $_GET['main-search-bar'];
 
     $stmt = sqlsrv_prepare( $conn, $sql, array( &$search ));
-    $stmt = sqlsrv_execute ($stmt);
+    $stmt = sqlsrv_execute($stmt);
+    if( $stmt === false){
+        die( print_r( sqlsrv_errors(), true) );
+    }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
