@@ -33,7 +33,6 @@ body {
   float: left;
   margin: auto;
   height: 50px;
-  z-index: 100;
   font-family: 'Merriweather', serif;
   border-bottom: 3px solid #006989;
 }
@@ -59,7 +58,7 @@ body {
   height: 100%;
   position: fixed;
   top: 0px;
-  z-index: -100;
+  z-index: -1;
   background-image: url("../images/bookshelf.jpg");
   background-attachment: fixed;
 }
@@ -186,7 +185,4 @@ textarea {
   display: block;
   text-align: center;
   font-size: 3em;
-}
-.signup-input {
-  z-index: 100;
 }

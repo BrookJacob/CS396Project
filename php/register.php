@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
     <body class="splash">
+        <div class="backsplash"></div>
         <div class="menu-bar">
             <ul class="menu-buttons">
                 <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>
@@ -15,7 +16,6 @@
                 <li class="cheat"></li>
             </ul>
         </div>
-        <div class="backsplash">
             <form class="login" action="register.php" method="post">
                 <h>sign up</h>
                 <input class="signup-input" type="text" placeholder="first name" name="first-name">
@@ -27,6 +27,8 @@
 				<input class="signup-input" type="submit" value="submit">
 			</form>
 <?php
+//process for hashing user's passwords adapted from:http://forums.devshed.com/php-faqs-stickies-167/program-basic-secure-login-system-using-php-mysql-891201.html
+
 	require("common.php");
     
     if(!empty($_POST))
@@ -63,12 +65,26 @@
         if ( $stmt === true){
             die("email is already taken");
         }
-
+        $firstname = $_POST['first-name'];
+        $lastname = $_POST['last-name'];
+        $salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
+        $userPassword = hash('sha256', $_POST['password'] . $salt);
+        for( $round = 0; $round < 65536; $round++){
+            $userPassword = hash('sha256', $userPassword . $salt);
+        }
+        $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword, salt)
+                VALUES (?, ?, ?, ?, ?, ?)";
+        $params( &$firstname, &$lastname, &$username, &$email, &$userPassword, &$salt);
+        $stmt = sqlsrv_query( $conn, $sql, $params);
+        if ( $stmt === true){
+            die("email is already taken");
+        }
+        header("Location: login.php");
+        
     }
     
     sqlsrv_close( $conn );
 ?>
-            </ul>
-        </div>
+        
 </body>
 </html>
