@@ -22,7 +22,8 @@
     $search = $_GET['main-search-bar'];
 
     $stmt = sqlsrv_prepare( $conn, $sql, array( &$search ));
-    $stmt = sqlsrv_execute($stmt);
+    echo $stmt;
+    $stmt = sqlsrv_execute( $stmt );
     if( $stmt === false){
         die( print_r( sqlsrv_errors(), true) );
     }
