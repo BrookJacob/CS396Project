@@ -19,10 +19,13 @@
 <?php
 	require("common.php");
     $search = $_REQUEST['main-search-bar'];
-    $params = array( &$search );
 	$sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%?%' OR b.author LIKE '%?%' OR b.ISBN10 = '?' OR b.ISBN13 = '?' OR g.genreName LIKE '%?%' AND b.genreID = g.genreID";
     $stmt = sqlsrv_query( $conn, $sql, $params);
     echo $stmt . "</ br>";
+    if( $stmt === false){
+        echo sqlsrv_errors();
+        die( print_r(sqlsrv_errors(), true) );
+    }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
