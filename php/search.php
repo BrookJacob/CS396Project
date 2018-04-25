@@ -21,6 +21,10 @@
     $search = $_REQUEST['main-search-bar'];
 	$sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%". $search . "%' OR b.author LIKE '%" . $search . "%' OR b.ISBN13 = '" . $search . "' OR g.genreName LIKE '%" . $search . "%' AND b.genreID = g.genreID";
     $stmt = sqlsrv_query( $conn, $sql );
+    if( $stmt === false ){
+        echo sqlsrv_errors();
+        die( print_r( sqlsrv_errors(), true) );
+    }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
