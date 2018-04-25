@@ -21,7 +21,7 @@
     $sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '% ? %' OR b.author LIKE '% ? %' OR b.ISBN13 = ' ? ' OR b.ISBN10 = ' ? ' OR g.genreName LIKE '% ? %' AND b.genreID = g.genreID";
     echo $sql;
     $search = $_GET['main-search-bar'];
-
+    echo $search;
     $stmt = sqlsrv_prepare( $conn, $sql, array( &$search ));
     echo $stmt;
     sqlsrv_execute( $stmt );
@@ -31,7 +31,7 @@
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
-    $version = sqlsrv_query("@@version");
+    $version = sqlsrv_query("@@VERSION");
     echo $version;
     sqlsrv_close( $conn );
 ?>
