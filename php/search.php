@@ -18,22 +18,17 @@
             <ul class="search-results">
 <?php
 	require("common.php");
-    $sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '% ? %' OR b.author LIKE '% ? %' OR b.ISBN13 = ' ? ' OR b.ISBN10 = ' ? ' OR g.genreName LIKE '% ? %' AND b.genreID = g.genreID";
-    echo $sql . "</ br>";
     $search = $_REQUEST['main-search-bar'];
-    echo $search . "</ br>";
-    $stmt = sqlsrv_prepare( $conn, $sql, array( &$search ));
-    echo $stmt . "</ br>";
-    $stmt = sqlsrv_execute( $stmt );
-    echo $stmt . "</ br>";
+    $sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '% ? %' OR b.author LIKE '% ? %' OR b.ISBN13 = ' ? ' OR b.ISBN10 = ' ? ' OR g.genreName LIKE '% ? %' AND b.genreID = g.genreID";
+    $params = array($_POST['main-search-bar']);
+    $stmt = sqlsrv_query( $conn, $sql);
     if( $stmt === false){
-        die( print_r( sqlsrv_errors(), true) );
+        die(print_r( sqlsrv_errors(), true));
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
-    $version = sqlsrv_query("@@VERSION");
-    echo $version;
+    
     sqlsrv_close( $conn );
 ?>
             </ul>
