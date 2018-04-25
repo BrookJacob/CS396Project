@@ -26,8 +26,8 @@
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
-    $version = sqlsrv_query("@@");
-    echo version;
+    $version = sqlsrv_query("@@version");
+    echo $version;
     sqlsrv_close( $conn );
 ?>
             </ul>
