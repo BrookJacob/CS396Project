@@ -37,7 +37,7 @@
             die("please enter your last name.");
         }
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-            die("please enter your email.");
+            die("please enter a valid email address.");
         }
         if(empty($_POST['username'])){
             die("please enter a username.");
@@ -48,6 +48,7 @@
         if(empty($_POST['confirm-password'])){
             die("please confirm your password.");
         }
+        
     }
     
     sqlsrv_close( $conn );

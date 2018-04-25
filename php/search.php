@@ -18,13 +18,16 @@
             <ul class="search-results">
 <?php
 	require("common.php");
-    $search = $_REQUEST['main-search-bar'];
-	$sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%". $search . "%' OR b.author LIKE '%" . $search . "%' OR b.ISBN13 = '" . $search . "' OR g.genreName LIKE '%" . $search . "%' AND b.genreID = g.genreID";
-    $stmt = sqlsrv_query( $conn, $sql);
+    $sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '% ? %' OR b.author LIKE '% ? %' OR b.ISBN13 = ' ? ' OR b.ISBN10 = ' ? ' OR g.genreName LIKE '% ? %' AND b.genreID = g.genreID";
+    $search = $_GET['main-search-bar'];
+
+    $stmt = sqlsrv_prepare( $conn, $sql, array( &$search ));
+    $stmt = sqlsrv_execute ($stmt);
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
-    
+    $version = sqlsrv_query("@@");
+    echo version;
     sqlsrv_close( $conn );
 ?>
             </ul>
