@@ -74,7 +74,7 @@
         }
         $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword, salt)
                 VALUES (?, ?, ?, ?, ?, ?)";
-        $params( &$firstname, &$lastname, &$username, &$email, &$userPassword, &$salt);
+        $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword, &$salt);
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if ( $stmt === true){
             die("email is already taken");
