@@ -20,7 +20,7 @@
 	require("common.php");
     $sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE % ? % OR b.author LIKE % ? % OR b.ISBN13 =  ?  OR b.ISBN10 =  ?  OR g.genreName LIKE % ? % AND b.genreID = g.genreID";
     echo $sql;
-    $params = array($_POST['main-search-bar']);
+    $params = array($_POST['main-search-bar'], $_POST['main-search-bar'], $_POST['main-search-bar'], $_POST['main-search-bar'], $_POST['main-search-bar']);
     echo $params[0];
     $stmt = sqlsrv_query( $conn, $sql, $params);
     echo $stmt;
