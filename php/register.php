@@ -48,7 +48,11 @@
         if(empty($_POST['confirm-password'])){
             die("please confirm your password.");
         }
-        
+        $username = $_POST['username'];
+        $params = array( &$username );
+        $sql = "SELECT 1 FROM users WHERE username = '?'";
+        $stmt = sqlsrv_query( $conn, $sql, $params );
+
     }
     
     sqlsrv_close( $conn );
