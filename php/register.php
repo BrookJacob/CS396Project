@@ -76,11 +76,10 @@
                 VALUES (?, ?, ?, ?, ?, ?)";
         $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword, &$salt);
         $stmt = sqlsrv_query( $conn, $sql, $params);
-        if ( $stmt === true){
-            die("email is already taken");
+        if ( $stmt === true ){
+            die("could not execute query.");
         }
         header("Location: login.php");
-        
     }
     
     sqlsrv_close( $conn );
