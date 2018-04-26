@@ -67,13 +67,13 @@
         }
         $firstname = $_POST['first-name'];
         $lastname = $_POST['last-name'];
-        /*$salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
-        $userPassword = hash('sha256', $_POST['password'] . $salt);
-		*/
+        $salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
+        /*$userPassword = hash('sha256', $_POST['password'] . $salt);*/
+		
 		$userPassword = $_POST['password'];
-        /*for( $round = 0; $round < 65536; $round++){
+        for( $round = 0; $round < 65536; $round++){
             $userPassword = hash('sha256', $userPassword . $salt);
-        }*/
+        }
         $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword, salt)
                 VALUES (?, ?, ?, ?, ?, ?)";
         $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword);

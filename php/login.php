@@ -50,10 +50,10 @@
             for($round = 0;$round < 65536;$round++){
 				$check_password = hash('sha256', $check_password . $row['salt']);
 			}*/
-			  if($_POST['login-password'] === $row['userPassword']){
-                print("hello 1");
-                $login_ok = true;
-				}
+			if($_POST['login-password'] === $row['userPassword']){
+              print("hello 1");
+              $login_ok = true;
+			}
 			echo "$login_ok is still false";
         }
         if($login_ok){
