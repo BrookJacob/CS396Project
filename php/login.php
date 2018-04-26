@@ -18,7 +18,7 @@
     </div>
     <form class="login" action="login.php" method="post">
         <h>sign in</h>
-        <input class="login-input" type="text" placeholder="username or email" name="usernameEmail">
+        <input class="login-input" type="text" placeholder="username" name="usernameEmail">
         <input class="login-input" type="password" placeholder="password" name="login-password">
         <input class="login-input submit" type="submit">
     </form>
@@ -33,8 +33,8 @@
     {
         $usernameEmail = $_GET['usernameEmail'];
         $userPassword = $_GET['login-password'];
-        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = ? OR email = ?";
-        $params = array( &$usernameEmail, &$usernameEmail );
+        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = ?";
+        $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
