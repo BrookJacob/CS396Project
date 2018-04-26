@@ -31,16 +31,16 @@
 
     if(!empty($_POST))
     {
-        if(empty($_POST['username-email'])){
+        if(empty($_POST['usernameEmail'])){
             die("please enter your username or email.");
         }
         if(empty($_POST['login-password'])){
             die("please enter your password.");
         }
-        $usernameEmail = $_GET['username-email'];
+        $usernameEmail = $_GET['usernameEmail'];
         $userPassword = $_GET['login-password'];
         $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = ? OR email = ?";
-        $params = array( &$username-email );
+        $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
@@ -58,7 +58,7 @@
         }
         if($login_ok){
             unset($row['salt']);
-            unset($password['password']);
+            unset($password['login-password']);
             $_SESSION['user'] = $row;
             header("Location: library.php");
             die("Redirecting to: library.php");
