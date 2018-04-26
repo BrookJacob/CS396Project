@@ -18,7 +18,7 @@
     </div>
     <form class="login" action="login.php" method="post">
         <h>sign in</h>
-        <input class="login-input" type="text" placeholder="username" name="usernameEmail">
+        <input class="login-input" type="text" placeholder="username" name="usernameEmail" value="<?php echo $submitted_username; ?>">
         <input class="login-input" type="password" placeholder="password" name="login-password">
         <input class="login-input submit" type="submit">
     </form>
