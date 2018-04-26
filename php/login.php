@@ -40,7 +40,7 @@
             die(print_r(sqlsrv_errors(), true));
         }
         $login_ok = false;
-        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
+        $row = sqlsrv_fetch( $stmt );
         echo $row;
 
         if($row){
