@@ -31,16 +31,16 @@
 
     if(!empty($_POST))
     {
-        if(empty($_POST['usernameEmail'])){
+        if(empty($_POST['username-email'])){
             die("please enter your username or email.");
         }
-        if(empty($_POST['password'])){
+        if(empty($_POST['login-password'])){
             die("please enter your password.");
         }
-        $usernameEmail = $_GET['usernameEmail'];
-        $userPassword = $_GET['password'];
+        $usernameEmail = $_GET['username-email'];
+        $userPassword = $_GET['login-password'];
         $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = ? OR email = ?";
-        $params = array( &$usernameEmail );
+        $params = array( &$username-email );
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
@@ -48,11 +48,11 @@
         $login_ok = false;
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
         if($row){
-            $check_password = hash('sha256', $_POST['password'] . $row['salt']);
+            $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
             for($round = 0;$round < 65536;$round++){
                 $check_password = hash('sha256', $check_password . $row['salt']);
             }
-            if($check_password === $row['password']){
+            if($check_password === $row['userPassword']){
                 $login_ok = true;
             }
         }
