@@ -43,7 +43,7 @@
         $login_ok = false;
         $row = sqlsrv_fetch( $stmt );
         echo $row;
-        if($row){
+        if(sqlsrv_fetch($stmt) === false){
             print("hello");
             $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
             for($round = 0;$round < 65536;$round++){
