@@ -16,7 +16,7 @@
             <li class="cheat"></li>
         </ul>
     </div>
-    <form class="login" action="login.php" method="get">
+    <form class="login" action="login.php" method="post">
         <h>sign in</h>
         <input class="login-input" type="text" placeholder="username" name="usernameEmail" value="<?php echo $submitted_username; ?>">
         <input class="login-input" type="password" placeholder="password" name="login-password">
@@ -31,8 +31,8 @@
 
     if(!empty($_POST))
     {
-        $usernameEmail = $_GET['usernameEmail'];
-        $userPassword = $_GET['login-password'];
+        $usernameEmail = $_POST['usernameEmail'];
+        $userPassword = $_POST['login-password'];
         $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '".$usernameEmail."'";
 		echo $sql;
         $params = array( &$usernameEmail );
