@@ -33,10 +33,10 @@
     {
         $usernameEmail = $_POST['usernameEmail'];
         $userPassword = $_POST['login-password'];
-        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '".$usernameEmail."'";
+        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '?'";
 		echo $sql;
         $params = array( &$usernameEmail );
-        $stmt = sqlsrv_query( $conn, $sql);
+        $stmt = sqlsrv_query( $conn, $sql, $params);
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
@@ -46,11 +46,11 @@
         echo $row;
         if($row){
             print("hello");
-           /* $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
+           $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
             for($round = 0;$round < 65536;$round++){
 				$check_password = hash('sha256', $check_password . $row['salt']);
-			}*/
-			if($_POST['login-password'] === $row['userPassword']){
+			}
+			if($check_password === $row['userPassword']){
               print("hello 1");
               $login_ok = true;
 			}
