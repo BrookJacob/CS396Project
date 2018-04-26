@@ -16,15 +16,15 @@
                 <li class="cheat"></li>
             </ul>
         </div>
-            <form class="login" action="register.php" method="post">
+            <form class="signup" action="register.php" method="post">
                 <h>sign up</h>
                 <input class="signup-input" type="text" placeholder="first name" name="first-name">
                 <input class="signup-input" type="text" placeholder="last name" name="last-name">
                 <input class="signup-input" type="text" placeholder="email" name="email">
 				<input class="signup-input" type="text" placeholder="username" name="username">
-                <input class="signup-input" type="text" placeholder="password" name="password">
-                <input class="signup-input" type="text" placeholder="confirm password" name="confirm-password">
-				<input class="signup-input" type="submit" value="submit">
+                <input class="signup-input" type="password" placeholder="password" name="password">
+                <input class="signup-input" type="password" placeholder="confirm password" name="confirm-password">
+				<input class="signup-input submit" type="submit" value="submit">
 			</form>
 <?php
 //process for hashing user's passwords adapted from:http://forums.devshed.com/php-faqs-stickies-167/program-basic-secure-login-system-using-php-mysql-891201.html

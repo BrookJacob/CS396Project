@@ -172,7 +172,7 @@ textarea {
   border-color: #006989;
   border-style: solid;
 }
-.login {
+.signup {
   background-color: #333333;
   top: 200px;
   width: 70%;
@@ -180,6 +180,19 @@ textarea {
   margin: 150px auto;
   border-bottom: 3px solid #006989;
   
+}
+.signup h {
+  display: block;
+  text-align: center;
+  font-size: 3em;
+}
+.login {
+  background-color: #333333;
+  top: 200px;
+  width: 70%;
+  height: 70%;
+  margin: 150px auto;
+  border-bottom: 3px solid #006989;
 }
 .login h {
   display: block;
