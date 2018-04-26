@@ -54,6 +54,7 @@
                 print("hello 1");
                 $login_ok = true;
             }
+			echo "$login_ok is still false";
         }
         if($login_ok){
             unset($row['salt']);
