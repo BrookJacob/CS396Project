@@ -41,15 +41,15 @@
         }
         $login_ok = false;
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
-        echo $row;
+        print($row);
         if($row){
-            echo "hello";
+            print("hello");
             $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
             for($round = 0;$round < 65536;$round++){
                 $check_password = hash('sha256', $check_password . $row['salt']);
             }
             if($check_password === $row['userPassword']){
-                echo "hello 1";
+                print("hello 1");
                 $login_ok = true;
             }
         }
