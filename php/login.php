@@ -45,8 +45,7 @@
         $row = sqlsrv_fetch( $stmt );
         echo $row;
         if($row){
-            print("hello");
-           $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
+            $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
             for($round = 0;$round < 65536;$round++){
 				$check_password = hash('sha256', $check_password . $row['salt']);
 			}
@@ -54,7 +53,7 @@
               print("hello 1");
               $login_ok = true;
 			}
-			echo "$login_ok is still false";
+			echo "|| cant login ||";
         }
         if($login_ok){
             unset($row['salt']);
