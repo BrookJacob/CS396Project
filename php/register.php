@@ -19,11 +19,11 @@
             <form class="signup" action="register.php" method="post">
                 <h>sign up</h>
                 <input class="signup-input" type="text" placeholder="first name" name="first-name">
-                <input class="signup-input" type="text" placeholder="last name" name="last-name">
-                <input class="signup-input" type="text" placeholder="email" name="email">
-				<input class="signup-input" type="text" placeholder="username" name="username">
+                <input class="signup-input" type="text" placeholder="last name" name="last-name"><br>
+                <input class="signup-input" type="text" placeholder="email" name="email"><br>
+				<input class="signup-input" type="text" placeholder="username" name="username"><br>
                 <input class="signup-input" type="password" placeholder="password" name="password">
-                <input class="signup-input" type="password" placeholder="confirm password" name="confirm-password">
+                <input class="signup-input" type="password" placeholder="confirm password" name="confirm-password"><br>
 				<input class="signup-input submit" type="submit" value="submit">
 			</form>
 <?php
