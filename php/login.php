@@ -39,6 +39,7 @@
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
+        echo $stmt;
         $login_ok = false;
         $row = sqlsrv_fetch( $stmt );
         echo $row;
