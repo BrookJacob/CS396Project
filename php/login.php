@@ -48,7 +48,7 @@
         $login_ok = false;
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
         if($row){
-            $check_password = hash('sha256' $_POST['password'] . $row['salt']);
+            $check_password = hash('sha256', $_POST['password'] . $row['salt']);
             for($round = 0;$round < 65536;$round++){
                 $check_password = hash('sha256', $check_password . $row['salt']);
             }
