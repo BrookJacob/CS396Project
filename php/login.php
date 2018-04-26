@@ -42,7 +42,6 @@
         $login_ok = false;
         $row = sqlsrv_fetch( $stmt );
         echo $row;
-
         if($row){
             print("hello");
             $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
