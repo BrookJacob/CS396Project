@@ -33,7 +33,7 @@
     {
         $usernameEmail = $_GET['usernameEmail'];
         $userPassword = $_GET['login-password'];
-        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = ?";
+        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '?'";
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if( $stmt === false){
