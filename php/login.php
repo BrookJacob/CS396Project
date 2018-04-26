@@ -16,7 +16,7 @@
             <li class="cheat"></li>
         </ul>
     </div>
-    <form class="login" action="login.php" method="post">
+    <form class="login" action="login.php" method="get">
         <h>sign in</h>
         <input class="login-input" type="text" placeholder="username" name="usernameEmail" value="<?php echo $submitted_username; ?>">
         <input class="login-input" type="password" placeholder="password" name="login-password">
@@ -33,19 +33,17 @@
     {
         $usernameEmail = $_GET['usernameEmail'];
         $userPassword = $_GET['login-password'];
-        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '". $usernameEmail . "'";
-		echo $sql;
+        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '?'";
         $params = array( &$usernameEmail );
-        $stmt = sqlsrv_query( $conn, $sql);
+        $stmt = sqlsrv_query( $conn, $sql, $params);
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
         echo $stmt;
         $login_ok = false;
-        $row = sqlsrv_fetch_array( $stmt );
-        echo count($row);
-		print_r($row);
-        if(count($row)){
+        $row = sqlsrv_fetch( $stmt );
+        echo $row;
+        if($row){
             print("hello");
             $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
             for($round = 0;$round < 65536;$round++){
