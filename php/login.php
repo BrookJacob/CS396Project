@@ -41,8 +41,8 @@
         }
         $login_ok = false;
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
-        print($row);
-        print("goodbye");
+        echo $row;
+
         if($row){
             print("hello");
             $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
