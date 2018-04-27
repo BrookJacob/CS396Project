@@ -42,7 +42,7 @@
         echo $stmt;
         $login_ok = false;
         $row = sqlsrv_fetch( $stmt );
-        echo &$row;
+        echo $row;
         if($row){
 			if(password_verify( $password, $row['password'])){
               print("hello 1");
