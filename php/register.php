@@ -78,7 +78,7 @@
         if ( $stmt === true ){
             die("could not execute query.");
         }
-        /*header("Location: login.php");*/
+        header("Location: login.php");
     }
     
     sqlsrv_close( $conn );

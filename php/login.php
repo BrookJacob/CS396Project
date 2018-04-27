@@ -33,7 +33,7 @@
     {
         $usernameEmail = $_POST['usernameEmail'];
         $userPassword = $_POST['login-password'];
-        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '".$usernameEmail."'";
+        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '?' OR email = '?'";
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql );
         if( $stmt === false){
@@ -44,7 +44,7 @@
         $row = sqlsrv_fetch( $stmt );
         echo $row;
         if($row){
-			if(password_verify( $_POST['login-password']), $row['hash']){
+			if(password_verify( $_POST['login-password']), $row['password']){
               print("hello 1");
               $login_ok = true;
 			}
