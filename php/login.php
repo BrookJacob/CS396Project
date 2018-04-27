@@ -41,7 +41,7 @@
         }
         $login_ok = false;
         $row = sqlsrv_fetch( $stmt );
-        $hash = substr($row['password'], 0, 60);
+        $hash = substr($password, 0, 60);
         if($row){
 			if( password_verify( $password, $hash) ){
               print("hello 1");
