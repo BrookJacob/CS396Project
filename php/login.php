@@ -29,19 +29,13 @@
     {
 
         $sql = 'SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = \'?\'';
+        $usernameEmail = trim($_POST['usernameEmail']);
+        $password = trim($_POST['password']);
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params );
-        echo $stmt."<br />";
         $row = sqlsrv_fetch( $stmt );
-        echo $row."<br />";
         $numRows = sqlsrv_num_rows( $stmt );
-        echo $numRows."<br />";
         $hash = substr($row['password'], 0, 60 );
-        echo $hash."<br />";
-        $usernameEmail = trim($_POST['usernameEmail']);
-        echo $usernameEmail."<br />";
-        $password = trim($_POST['password']);
-        echo $password."<br />";
         $login_ok = false;
 
 
