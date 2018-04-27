@@ -23,7 +23,7 @@
         <input class="login-input submit" type="submit">
     </form>
 <?php
-//login method adapted from: http://forums.devshed.com/php-faqs-stickies-167/program-basic-secure-login-system-using-php-mysql-891201.html
+
 
     require("common.php");
     

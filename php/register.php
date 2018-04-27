@@ -27,7 +27,6 @@
 				<input class="signup-input submit" type="submit" value="submit">
 			</form>
 <?php
-//process for hashing user's passwords adapted from:http://forums.devshed.com/php-faqs-stickies-167/program-basic-secure-login-system-using-php-mysql-891201.html
 
 	require("common.php");
     
@@ -76,7 +75,7 @@
                 VALUES (?, ?, ?, ?, ?, ?)";
         $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword);
         $stmt = sqlsrv_query( $conn, $sql, $params);
-        if ( $stmt === false ){
+        if ( $stmt === true ){
             die("could not execute query.");
         }
         header("Location: login.php");
