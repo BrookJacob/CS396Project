@@ -41,6 +41,7 @@
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
+        echo 'I work';
         if($row){
 			if( password_verify( $password, $hash) ){
               $login_ok = true;
