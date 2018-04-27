@@ -32,7 +32,7 @@
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params );
         echo $stmt."<br />";
-        $row = sqlsrv_fetch( $stmt );
+        $numRows = sqlsrv_num_rows( $stmt );
         echo $row."<br />";
         $hash = substr($row['password'], 0, 60 );
         echo $hash."<br />";
@@ -43,7 +43,7 @@
         $login_ok = false;
 
 
-        if( $stmt === false){
+        if( $numRows == 1){
             die(print_r(sqlsrv_errors(), true));
         }
         
