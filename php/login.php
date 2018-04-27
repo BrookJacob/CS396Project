@@ -35,6 +35,7 @@
         $row = sqlsrv_fetch( $stmt );
         echo $row."<br />";
         $numRows = sqlsrv_num_rows( $stmt );
+        echo $numRows;
         $hash = substr($row['password'], 0, 60 );
         echo $hash."<br />";
         $usernameEmail = trim($_POST['usernameEmail']);
