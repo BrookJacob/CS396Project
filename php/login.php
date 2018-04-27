@@ -51,7 +51,7 @@
 			if( password_verify( $password, $hash ) ){
               $login_ok = true;
             }
-            echo 'got here';
+            echo 'got here<br />';
         }
         if($login_ok){
             unset($row['password']);
