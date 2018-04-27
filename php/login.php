@@ -31,19 +31,24 @@
         $sql = "SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = '?'";
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params );
+        echo $stmt."<br />";
         $row = sqlsrv_fetch( $stmt );
+        echo $row."<br />";
         $hash = substr($row['password'], 0, 60 );
+        echo $hash."<br />";
         $usernameEmail = $_POST['usernameEmail'];
+        echo $usernameEmail."<br />";
         $password = $_POST['password'];
+        echo $password."<br />";
         $login_ok = false;
 
 
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
-        echo 'I work';
+        
         if($row){
-			if( password_verify( $password, $hash) ){
+			if( password_verify( $password, $hash ) ){
               $login_ok = true;
             }
             echo 'got here';
