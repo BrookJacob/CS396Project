@@ -44,12 +44,7 @@
         $row = sqlsrv_fetch( $stmt );
         echo $row;
         if($row){
-            $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
-            for($round = 0;$round < 65536;$round++){
-				$check_password = hash('sha256', $check_password . $row['salt']);
-			}
-			echo $check_password;
-			if($check_password === $row['userPassword']){
+			if(password_verify( $_POST['login-password']), $row['hash']){
               print("hello 1");
               $login_ok = true;
 			}
