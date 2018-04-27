@@ -23,32 +23,29 @@
         <input class="login-input submit" type="submit">
     </form>
 <?php
-
-
     require("common.php");
-    
-    $submitted_username = '';
 
     if(!empty($_POST))
     {
-        $usernameEmail = $_POST['usernameEmail'];
-        $password = $_POST['password'];
+
         $sql = "SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = '?'";
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params );
+        $row = sqlsrv_fetch( $stmt );
+        $hash = substr($row['password'], 0, 60 );
+        $usernameEmail = $_POST['usernameEmail'];
+        $password = $_POST['password'];
+        $login_ok = false;
+
+
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
-        $login_ok = false;
-        $row = sqlsrv_fetch( $stmt );
-        $hash = substr($row['password'], 0, 60);
-        echo $row['password'];
-        echo $hash;
         if($row){
 			if( password_verify( $password, $hash) ){
-              print("hello 1");
               $login_ok = true;
-			}
+            }
+            echo 'got here';
         }
         if($login_ok){
             unset($row['password']);
