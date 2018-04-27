@@ -48,7 +48,6 @@
               print("hello 1");
               $login_ok = true;
 			}
-			echo "|| cant login ||";
         }
         if($login_ok){
             unset($row['password']);
