@@ -19,7 +19,7 @@
     <form class="login" action="login.php" method="post">
         <h>sign in</h>
         <input class="login-input" type="text" placeholder="username" name="usernameEmail" value="<?php echo $submitted_username; ?>">
-        <input class="login-input" type="password" placeholder="password" name="login-password">
+        <input class="login-input" type="password" placeholder="password" name="password">
         <input class="login-input submit" type="submit">
     </form>
 <?php
@@ -32,7 +32,7 @@
     if(!empty($_POST))
     {
         $usernameEmail = $_POST['usernameEmail'];
-        $userPassword = $_POST['login-password'];
+        $password = $_POST['password'];
         $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '?' OR email = '?'";
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql );
@@ -44,15 +44,14 @@
         $row = sqlsrv_fetch( $stmt );
         echo $row;
         if($row){
-			if(password_verify( $userPassword, $row['password'])){
+			if(password_verify( $password, $row['password'])){
               print("hello 1");
               $login_ok = true;
 			}
 			echo "|| cant login ||";
         }
         if($login_ok){
-            unset($row['salt']);
-            unset($row['userPassword']);
+            unset($row['password']);
             $_SESSION['user'] = $row;
             header("Location: library.php");
             die("Redirecting to: library.php");
