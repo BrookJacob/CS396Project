@@ -19,11 +19,11 @@
     <form class="login" action="login.php" method="post">
         <h>sign in</h>
         <input class="login-input" type="text" placeholder="username" name="usernameEmail" value="<?php echo $submitted_username; ?>">
-        <input class="login-input" type="password" placeholder="password" name="login-password">
+        <input class="login-input" type="password" placeholder="password" name="password">
         <input class="login-input submit" type="submit">
     </form>
 <?php
-//login method adapted from: http://forums.devshed.com/php-faqs-stickies-167/program-basic-secure-login-system-using-php-mysql-891201.html
+
 
     require("common.php");
     
@@ -31,31 +31,25 @@
 
     if(!empty($_POST))
     {
-        $usernameEmail = $_GET['usernameEmail'];
-        $userPassword = $_GET['login-password'];
-        $sql = "SELECT userID, firstName, lastName, username, email, userPassword, salt FROM users WHERE username = '?'";
+        $usernameEmail = $_POST['usernameEmail'];
+        $password = $_POST['password'];
+        $sql = "SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = '?'";
         $params = array( &$usernameEmail );
-        $stmt = sqlsrv_query( $conn, $sql, $params);
+        $stmt = sqlsrv_query( $conn, $sql, $params );
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
         $login_ok = false;
         $row = sqlsrv_fetch( $stmt );
-        echo $row;
+        $hash = substr($password, 0, 60);
         if($row){
-            print("hello");
-            $check_password = hash('sha256', $_POST['login-password'] . $row['salt']);
-            for($round = 0;$round < 65536;$round++){
-                $check_password = hash('sha256', $check_password . $row['salt']);
-            }
-            if($check_password === $row['userPassword']){
-                print("hello 1");
-                $login_ok = true;
-            }
+			if( password_verify( $password, $hash) ){
+              print("hello 1");
+              $login_ok = true;
+			}
         }
         if($login_ok){
-            unset($row['salt']);
-            unset($row['userPassword']);
+            unset($row['password']);
             $_SESSION['user'] = $row;
             header("Location: library.php");
             die("Redirecting to: library.php");

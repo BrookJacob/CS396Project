@@ -19,15 +19,14 @@
             <form class="signup" action="register.php" method="post">
                 <h>sign up</h>
                 <input class="signup-input" type="text" placeholder="first name" name="first-name">
-                <input class="signup-input" type="text" placeholder="last name" name="last-name">
-                <input class="signup-input" type="text" placeholder="email" name="email">
-				<input class="signup-input" type="text" placeholder="username" name="username">
+                <input class="signup-input" type="text" placeholder="last name" name="last-name"><br>
+                <input class="signup-input" type="text" placeholder="email" name="email"><br>
+				<input class="signup-input" type="text" placeholder="username" name="username"><br>
                 <input class="signup-input" type="password" placeholder="password" name="password">
-                <input class="signup-input" type="password" placeholder="confirm password" name="confirm-password">
+                <input class="signup-input" type="password" placeholder="confirm password" name="confirm-password"><br>
 				<input class="signup-input submit" type="submit" value="submit">
 			</form>
 <?php
-//process for hashing user's passwords adapted from:http://forums.devshed.com/php-faqs-stickies-167/program-basic-secure-login-system-using-php-mysql-891201.html
 
 	require("common.php");
     
@@ -51,6 +50,9 @@
         if(empty($_POST['confirm-password'])){
             die("please confirm your password.");
         }
+        if($_POST['password'] != $_POST['confirm-password']){
+            die("please enter matching passwords");
+        }
         $username = $_POST['username'];
         $params = array( &$username );
         $sql = "SELECT 1 FROM users WHERE username = '?'";
@@ -67,14 +69,11 @@
         }
         $firstname = $_POST['first-name'];
         $lastname = $_POST['last-name'];
-        $salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
-        $userPassword = hash('sha256', $_POST['password'] . $salt);
-        for( $round = 0; $round < 65536; $round++){
-            $userPassword = hash('sha256', $userPassword . $salt);
-        }
-        $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword, salt)
-                VALUES (?, ?, ?, ?, ?, ?)";
-        $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword, &$salt);
+       
+        $password = password_hash( $_POST['password'], PASSWORD_DEFAULT);
+        $sql = "INSERT INTO users (firstName, lastName, username, email, password)
+                VALUES (?, ?, ?, ?, ?)";
+        $params = array( &$firstname, &$lastname, &$username, &$email, &$password);
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if ( $stmt === true ){
             die("could not execute query.");
