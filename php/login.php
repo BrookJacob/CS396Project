@@ -44,7 +44,7 @@
         $row = sqlsrv_fetch( $stmt );
         echo $row;
         if($row){
-			if(password_verify( $_POST['login-password']), $row['password']){
+			if(password_verify( $userPassword, $row['password'])){
               print("hello 1");
               $login_ok = true;
 			}
