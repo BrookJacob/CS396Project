@@ -33,9 +33,9 @@
     {
         $usernameEmail = $_POST['usernameEmail'];
         $password = $_POST['password'];
-        $sql = "SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = '?' OR email = '?'";
+        $sql = "SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = '".$usernameEmail."'";
         $params = array( &$usernameEmail );
-        $stmt = sqlsrv_query( $conn, $sql, $params );
+        $stmt = sqlsrv_query( $conn, $sql );
         if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
