@@ -44,7 +44,7 @@
         $hash = substr($row['password'], 0, 60);
         echo $hash;
         if($row){
-			if( password_verify( $password, '$10$RS9vaqMBnAKZGYxoB4TIG.JAsKBu2mrfNTU4KUp0MxhNcoTWFu1Te') ){
+			if( password_verify( $password, $hash) ){
               print("hello 1");
               $login_ok = true;
 			}
