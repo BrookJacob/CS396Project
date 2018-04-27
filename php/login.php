@@ -28,7 +28,7 @@
     if(!empty($_POST))
     {
 
-        $sql = "SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = '?'";
+        $sql = 'SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = \'?\'';
         $params = array( &$usernameEmail );
         $stmt = sqlsrv_query( $conn, $sql, $params );
         echo $stmt."<br />";
@@ -37,9 +37,9 @@
         $numRows = sqlsrv_num_rows( $stmt );
         $hash = substr($row['password'], 0, 60 );
         echo $hash."<br />";
-        $usernameEmail = $_POST['usernameEmail'];
+        $usernameEmail = trim($_POST['usernameEmail']);
         echo $usernameEmail."<br />";
-        $password = $_POST['password'];
+        $password = trim($_POST['password']);
         echo $password."<br />";
         $login_ok = false;
 
