@@ -72,7 +72,7 @@
        
         $userPassword = password_hash( $_POST['password'], PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (firstName, lastName, username, email, password)
-                VALUES (?, ?, ?, ?, ?, ?)";
+                VALUES (?, ?, ?, ?, ?)";
         $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword);
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if ( $stmt === true ){
