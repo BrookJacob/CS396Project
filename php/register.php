@@ -51,6 +51,9 @@
         if(empty($_POST['confirm-password'])){
             die("please confirm your password.");
         }
+        if($_POST['password'] != $_POST['confirm-password']){
+            die("please enter matching passwords");
+        }
         $username = $_POST['username'];
         $params = array( &$username );
         $sql = "SELECT 1 FROM users WHERE username = '?'";
@@ -73,7 +76,7 @@
                 VALUES (?, ?, ?, ?, ?, ?)";
         $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword);
         $stmt = sqlsrv_query( $conn, $sql, $params);
-        if ( $stmt === true ){
+        if ( $stmt === false ){
             die("could not execute query.");
         }
         header("Location: login.php");
