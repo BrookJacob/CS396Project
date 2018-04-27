@@ -43,11 +43,11 @@
         $login_ok = false;
 
 
-        if( $numRows == 1){
+        if( $stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
         
-        if($row){
+        if( $numRows == 1){
 			if( password_verify( $password, $hash ) ){
               $login_ok = true;
             }
