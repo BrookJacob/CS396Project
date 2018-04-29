@@ -53,6 +53,7 @@
         if(password_verify( $password, $hash )){
             $login = true;
         }
+        echo $login;
         if($login){
             unset($stmt[4]);
             $_SESSION['user'] = $stmt;
