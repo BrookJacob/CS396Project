@@ -54,7 +54,10 @@
             die("Redirecting to: library.php");
         } else {
             echo "cant login<br />";
-            echo password_hash("12345", PASSWORD_DEFAULT)."<br />";
+            $password = password_hash("12345", PASSWORD_DEFAULT)."<br />";
+            if(password_verify('12345', $password )){
+                echo 'cracked'
+            }
             echo "".$password;
             echo password_hash( $_POST['username'], PASSWORD_DEFAULT);
         }
