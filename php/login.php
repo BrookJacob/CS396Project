@@ -55,7 +55,7 @@
         } else {
             echo "cant login<br />";
             $password = password_hash("12345", PASSWORD_DEFAULT)."<br />";
-            if(password_verify('12345', $password )){
+            if(password_verify("12345", $password )){
                 echo 'cracked';
             }
             echo "".$password;
