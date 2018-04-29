@@ -35,6 +35,9 @@
         $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
         $params = array( &$username );
         $stmt = sqlsrv_query( $conn, $sql, $params );
+        if( $stmt === false) {
+            die( print_r( sqlsrv_errors(), true) );
+        }
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
             echo $row['userPassword']."<br />";
             var_dump($row);
