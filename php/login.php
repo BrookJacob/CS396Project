@@ -25,10 +25,20 @@
 <?php
     require("common.php");
 
+    //$2y$10$pnMoff/rp0E9UoqdpfrgMuov8RKVzZupWpF/vCHSlbJ4u5kCq8SCm
     if(!empty($_POST))
     {
 
-       
+        $login = false;
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        if(password_verify( $password, '$2y$10$pnMoff/rp0E9UoqdpfrgMuov8RKVzZupWpF/vCHSlbJ4u5kCq8SCm')){
+            $login = true;
+        }
+        if($login){
+            echo 'congrats';
+        }
+
     }
 ?>
 </body>
