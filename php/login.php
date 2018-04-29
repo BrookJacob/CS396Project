@@ -28,10 +28,8 @@
     if(!empty($_POST))
     {
 
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-        echo $username."<br/ >";
-        echo $password."<br/ >";
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
         $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
         $params = array( &$username );
@@ -43,7 +41,7 @@
         echo $row['userPassword'];
         echo $row[4];
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            $hash = trim($row['userPassword']);
+            $hash = $row['userPassword'];
         }
         if(password_verify( $password, $hash )){
             unset($row['userPassword']);
