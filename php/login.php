@@ -53,6 +53,7 @@
             die("Redirecting to: library.php");
         } else {
             echo 'can\'t login';
+            echo password_hash("12345", PASSWORD_DEFAULT);
         }
     }
 
