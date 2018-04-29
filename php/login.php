@@ -45,7 +45,7 @@
             echo "No results found";
         } else  {
             while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
-                $hash = $row[4];
+                $hash = $row['userPassword'];
             }
         }
         
