@@ -18,7 +18,7 @@
     </div>
     <form class="login" action="login.php" method="post">
         <h>sign in</h>
-        <input class="login-input" type="text" placeholder="username" name="username" value="<?php echo $submitted_username; ?>">
+        <input class="login-input" type="text" placeholder="username" name="username">
         <input class="login-input" type="password" placeholder="password" name="password">
         <input class="login-input submit" type="submit">
     </form>
@@ -53,8 +53,8 @@
             die("Redirecting to: library.php");
         } else {
             echo "cant login";
-            echo password_hash("12345", PASSWORD_DEFAULT);
-            echo password_hash( $_POST['username'] );
+            echo password_hash("12345", PASSWORD_DEFAULT)."<br />";
+            echo password_hash( $_POST['username'], PASSWORD_DEFAULT);
         }
     }
 
