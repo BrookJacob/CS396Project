@@ -41,14 +41,11 @@
             die("failed to run query");
         }
 
-        if(sqlsrv_has_rows( $stmt )){
-            echo "No results found";
-        } else  {
-            while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
-                $hash = $row['userPassword'];
-                echo $row['userID'].", ".$row['firstName'].", ".$row['lastName'].", ".$row['email'].", ".$row['userPassword'];
-            }
+        while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
+            $hash = $row['userPassword'];
+            echo $row['userID'].", ".$row['firstName'].", ".$row['lastName'].", ".$row['email'].", ".$row['userPassword'];
         }
+        
         echo $hash;
         if(password_verify( $password, $hash )){
             $login = true;
