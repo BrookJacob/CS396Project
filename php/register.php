@@ -75,7 +75,7 @@
             die("email already in use");
         }
 
-        $sql = "INSERT INTO users (firstName, lastName, username, email, password)
+        $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword)
                 VALUES (?,?,?,?,?)";
         $params = array( &$firstName, &$lastName, &$email, &$username, &$passwordHash );
         $stmt = sqlsrv_query( $conn, $sql, $params );

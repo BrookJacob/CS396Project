@@ -32,7 +32,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $sql = "SELECT userID, firstName, lastName, email, password FROM users WHERE username = '?'";
+        $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
         $params = array( &$username );
         try{
             $stmt = sqlsrv_query( $conn, $sql, $params );
@@ -45,11 +45,11 @@
             echo "No results found";
         } else  {
             while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
-                $_SESSION['login'] = $row[4];
+                $hash = $row[4];
             }
         }
         
-        if(password_verify( $password, $_SESSION['login'] )){
+        if(password_verify( $password, $hash )){
             $login = true;
         }
         echo $login;
