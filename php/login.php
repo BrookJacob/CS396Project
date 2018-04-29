@@ -28,7 +28,6 @@
     if(!empty($_POST))
     {
 
-        $login = false;
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         echo $username;
@@ -43,9 +42,6 @@
             $hash = trim($row['userPassword']);
         }
         if(password_verify( $password, $hash )){
-            $login = true;
-        }
-        if($login == true){
             unset($row['userPassword']);
             $_SESSION['user'] = $stmt;
 
@@ -53,13 +49,8 @@
             die("Redirecting to: library.php");
         } else {
             echo "cant login<br />";
-            $password = password_hash("12345", PASSWORD_DEFAULT)."<br />";
-            if(password_verify("12345", $password )){
-                print "cracked";
-            }
-            echo "".$password;
-            echo password_hash( trim($_POST['username']), PASSWORD_DEFAULT);
         }
+        
     }
 
     sqlsrv_close( $conn );
