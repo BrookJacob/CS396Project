@@ -35,13 +35,12 @@
 
         $sql = "SELECT userID, firstName, lastName, email, password FROM users WHERE username = '?'";
         $params = array( &$username );
-        $stmt = sqlsrv_query( $conn, $sql, $params );
         try{
             $stmt = sqlsrv_query( $conn, $sql, $params );
         } catch (Exception $e) {
             die("failed to run query");
         }
-        echo sqlsrv_get_field( $stmt, 4 );
+        echo sqlsrv_get_field( $stmt, 3 );
         if(password_verify( $password, sqlsrv_get_field( $stmt, 4 ))){
             $login = true;
         }
