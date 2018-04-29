@@ -54,11 +54,11 @@
             die("please enter matching passwords");
         }
 
-        $firstName = trim($_POST['first-name']);
-        $lastName = trim($_POST['last-name']);
-        $email = trim($_POST['email']);
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
+        $firstName = $_POST['first-name'];
+        $lastName = $_POST['last-name'];
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         $passwordHash = password_hash( $password, PASSWORD_DEFAULT);
 
         $sql = "SELECT 1 FROM users WHERE username = '?'";
