@@ -52,7 +52,7 @@
             header("Location: library.php");
             die("Redirecting to: library.php");
         } else {
-            echo "cant login";
+            echo "cant login<br />";
             echo password_hash("12345", PASSWORD_DEFAULT)."<br />";
             echo password_hash( $_POST['username'], PASSWORD_DEFAULT);
         }
