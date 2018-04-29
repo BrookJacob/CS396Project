@@ -29,8 +29,8 @@
     {
 
         $login = false;
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
 
         $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
         $params = array( &$username );
@@ -53,7 +53,7 @@
             header("Location: library.php");
             die("Redirecting to: library.php");
         } else {
-            echo "can't login";
+            echo 'can\'t login';
         }
     }
 ?>
