@@ -25,7 +25,6 @@
 <?php
     require("common.php");
 
-    //$2y$10$pnMoff/rp0E9UoqdpfrgMuov8RKVzZupWpF/vCHSlbJ4u5kCq8SCm
     if(!empty($_POST))
     {
 
@@ -38,15 +37,19 @@
         try{
             $stmt = sqlsrv_query( $conn, $sql, $params );
             echo sqlsrv_errors();
-        } catch (Exception $e) {
+        } catch (Exception $e){
             die("failed to run query");
         }
 
-        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_BOTH );
-        echo sqlsrv_errors();
-        echo $row[4];
-        if(password_verify( $password, $row[4])){
-            echo sqlsrv_errors();
+        if(sqlsrv_has_rows( $stmt )){
+            echo "No results found";
+        } else  {
+            while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
+                $hash = $row[4];
+            }
+        }
+        
+        if(password_verify( $password, $hash )){
             $login = true;
         }
         if($login){
@@ -55,12 +58,9 @@
 
             header("Location: library.php");
             die("Redirecting to: library.php");
+        } else {
+            echo "can't login";
         }
-        else
-        {
-            echo 'fuck';
-        }
-        echo sqlsrv_errors();
     }
 ?>
 </body>
