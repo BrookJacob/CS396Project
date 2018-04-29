@@ -4,14 +4,14 @@
 	fclose($file);
 	
     $serverName = "lb2.database.windows.net";
-	$connectionOptions = array("LB2Admin", "".$psswrd."", "lb2");
+	$connectionOptions = array( "Database" => "lb2", "Uid" => "LB2Admin", "PWD" => "".$psswrd."");
     
     //Establishes the connection
-    $mysqli = new mysqli($serverName, $connectionOptions);
-    if( mysqli_errno() ) {
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    if( $conn ) {
         echo "<p class=\"hidden\">Connection established. </p>";
     } else {
         echo "Connection could not be established.";
-        die( print_r( mysqli_errors(), true));
+        die( print_r( sqlsrv_errors(), true));
     }
 ?>
