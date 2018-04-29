@@ -45,12 +45,11 @@
             echo "No results found";
         } else  {
             while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
-                $hash = $row[4];
-                echo $hash;
+                $_SESSION['login'] = $row[4];
             }
         }
         
-        if(password_verify( $password, $hash )){
+        if(password_verify( $password, $_SESSION['login'] )){
             $login = true;
         }
         echo $login;
