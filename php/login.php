@@ -38,7 +38,7 @@
         $stmt = sqlsrv_query( $conn, $sql, $params );
         try{
             $stmt = sqlsrv_query( $conn, $sql, $params );
-        } catch {
+        } catch (Exception $e) {
             die("failed to run query");
         }
 
