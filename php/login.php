@@ -38,7 +38,7 @@
 
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
             echo $row['userPassword']."<br />";
-      }
+        }
         if(password_verify( $password, $row['userPassword'] )){
             $login = true;
         }
@@ -52,6 +52,8 @@
             echo 'can\'t login';
         }
     }
+
+    sqlsrv_close( $conn );
 ?>
 </body>
 </html>
