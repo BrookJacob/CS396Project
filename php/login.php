@@ -41,8 +41,8 @@
         } catch (Exception $e) {
             die("failed to run query");
         }
-        echo $stmt[4];
-        if(password_verify( $password, $stmt[4])){
+        echo sqlsrv_get_field( $stmt, 4 );
+        if(password_verify( $password, sqlsrv_get_field( $stmt, 4 ))){
             $login = true;
         }
         if($login){
