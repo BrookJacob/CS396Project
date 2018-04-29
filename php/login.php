@@ -46,7 +46,7 @@
         if(password_verify( $password, $row['userPassword'] )){
             $login = true;
         }
-        if($login){
+        if($login = true){
             
             $_SESSION['user'] = $stmt;
 
