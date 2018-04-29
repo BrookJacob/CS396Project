@@ -34,18 +34,13 @@
 
         $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
         $params = array( &$username );
-        try{
-            $stmt = sqlsrv_query( $conn, $sql, $params );
-            echo sqlsrv_errors();
-        } catch (Exception $e){
-            die("failed to run query");
-        }
+        $stmt = sqlsrv_query( $conn, $sql, $params );
 
-        while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
+        while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC )){
             $hash = $row['userPassword'];
             echo $row['userID'].", ".$row['firstName'].", ".$row['lastName'].", ".$row['email'].", ".$row['userPassword'];
         }
-        
+
         echo $hash;
         if(password_verify( $password, $hash )){
             $login = true;
