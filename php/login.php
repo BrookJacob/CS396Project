@@ -40,6 +40,7 @@
         }
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
             echo $row['userPassword']."<br />";
+            echo $row['4'];
             var_dump($row);
         }
         if(password_verify( $password, $row['userPassword'] )){
