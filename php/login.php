@@ -37,13 +37,16 @@
         $params = array( &$username );
         try{
             $stmt = sqlsrv_query( $conn, $sql, $params );
+            echo sqlsrv_errors();
         } catch (Exception $e) {
             die("failed to run query");
         }
 
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_BOTH );
+        echo sqlsrv_errors();
         echo $row[4];
         if(password_verify( $password, $row[4])){
+            echo sqlsrv_errors();
             $login = true;
         }
         if($login){
