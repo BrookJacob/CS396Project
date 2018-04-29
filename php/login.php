@@ -57,7 +57,7 @@
                 echo "cracked";
             }
             echo "".$password;
-            echo password_hash( $_POST['username'], PASSWORD_DEFAULT);
+            echo password_hash( trim($_POST['username']), PASSWORD_DEFAULT);
         }
     }
 
