@@ -77,7 +77,7 @@
 
         $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword)
                 VALUES (?,?,?,?,?)";
-        $params = array( &$firstName, &$lastName, &$email, &$username, &$passwordHash );
+        $params = array( &$firstName, &$lastName, &$username, &$email, &$passwordHash );
         $stmt = sqlsrv_query( $conn, $sql, $params );
         if( $stmt == false ){
             die("query does not work");
