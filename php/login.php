@@ -32,7 +32,17 @@
         $login = false;
         $username = $_POST['username'];
         $password = $_POST['password'];
-        if(password_verify( $password, '$2y$10$pnMoff/rp0E9UoqdpfrgMuov8RKVzZupWpF/vCHSlbJ4u5kCq8SCm')){
+
+        $sql = "SELECT userID, firstName, lastName, email, password FROM users WHERE username = '?'";
+        $params = array( &$username );
+        $stmt = sqlsrv_query( $conn, $sql, $params );
+        try{
+            $stmt = sqlsrv_query( $conn, $sql, $params );
+        } catch {
+            die("failed to run query");
+        }
+
+        if(password_verify( $password, $stmt[4])){
             $login = true;
         }
         if($login){
