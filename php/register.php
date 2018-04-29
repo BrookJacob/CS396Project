@@ -70,10 +70,11 @@
         $firstname = $_POST['first-name'];
         $lastname = $_POST['last-name'];
        
-        $userPassword = password_hash( $_POST['password'], PASSWORD_DEFAULT);
+        $userPassword = $_POST['password'];
+        $hash = password_hash( $_POST['password'], PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword)
                 VALUES (?, ?, ?, ?, ?)";
-        $params = array( &$firstname, &$lastname, &$username, &$email, &$userPassword);
+        $params = array( &$firstname, &$lastname, &$username, &$email, &$hash);
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if ( $stmt === true ){
             die("could not execute query.");
