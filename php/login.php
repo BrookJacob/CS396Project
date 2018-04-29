@@ -28,36 +28,7 @@
     if(!empty($_POST))
     {
 
-        $sql = 'SELECT userID, firstName, lastName, username, email, password FROM users WHERE username = \'?\'';
-        $usernameEmail = trim($_POST['usernameEmail']);
-        $password = trim($_POST['password']);
-        $params = array( &$usernameEmail );
-        $stmt = sqlsrv_query( $conn, $sql, $params );
-        $row = sqlsrv_fetch( $stmt );
-        $hash = substr($row['password'], 0, 60 );
-        echo $hash[0];
-        $login_ok = false;
-
-
-        if( $stmt === false){
-            die(print_r(sqlsrv_errors(), true));
-        }
-        
-        if( $row ){
-			if( password_verify( $password, $hash ) ){
-              $login_ok = true;
-            }
-            echo 'got here';
-        }
-        if($login_ok){
-            unset($row['password']);
-            $_SESSION['user'] = $row;
-            header("Location: library.php");
-            die("Redirecting to: library.php");
-        }else{
-            print("Login failed");
-            $submitted_username = htmlentities($_POST['usernameEmail'], ENT_QUOTES, 'UTF-8');
-        }
+       
     }
 ?>
 </body>
