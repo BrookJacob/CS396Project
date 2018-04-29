@@ -46,9 +46,16 @@
             $login = true;
         }
         if($login){
-            echo 'congrats';
+            unset($stmt[4]);
+            $_SESSION['user'] = $stmt;
+
+            header("Location: library.php");
+            die("Redirecting to: library.php");
         }
-        echo 'fuck';
+        else
+        {
+            echo 'fuck';
+        }
     }
 ?>
 </body>
