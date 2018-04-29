@@ -29,8 +29,8 @@
     {
 
         $login = false;
-        $username = trim($_REQUEST['username']);
-        $password = trim($_REQUEST['password']);
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
         echo $username;
 
         $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
