@@ -57,6 +57,7 @@
         {
             echo 'fuck';
         }
+        echo sqlsrv_errors();
     }
 ?>
 </body>
