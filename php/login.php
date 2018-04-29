@@ -35,9 +35,9 @@
         $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
         $params = array( &$username );
         $stmt = sqlsrv_query( $conn, $sql, $params );
-
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
             echo $row['userPassword']."<br />";
+            var_dump($row);
         }
         if(password_verify( $password, $row['userPassword'] )){
             $login = true;
