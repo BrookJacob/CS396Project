@@ -54,6 +54,7 @@
         } else {
             echo "cant login";
             echo password_hash("12345", PASSWORD_DEFAULT);
+            echo password_hash( $_POST['username']);
         }
     }
 
