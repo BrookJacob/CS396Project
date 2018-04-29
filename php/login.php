@@ -41,7 +41,7 @@
         } catch (Exception $e) {
             die("failed to run query");
         }
-
+        echo $stmt[4];
         if(password_verify( $password, $stmt[4])){
             $login = true;
         }
