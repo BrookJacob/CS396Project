@@ -39,15 +39,13 @@
             die( print_r( sqlsrv_errors(), true) );
         }
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            echo $row['userPassword']."<br />";
-            echo $row['4'];
-            var_dump($row);
+            $hash = trim($row['userPassword']);
         }
-        if(password_verify( $password, $row['userPassword'] )){
+        if(password_verify( $password, $hash )){
             $login = true;
         }
         if($login == true){
-            
+            unset($row['userPassword']);
             $_SESSION['user'] = $stmt;
 
             header("Location: library.php");
