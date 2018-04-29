@@ -30,7 +30,8 @@
 
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
-        echo $username;
+        echo $username."<br/ >";
+        echo $password."<br/ >";
 
         $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '?'";
         $params = array( &$username );
