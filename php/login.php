@@ -48,7 +48,7 @@
                 $hash = $row['userPassword'];
             }
         }
-        echo $row['userPassword'];
+        echo $hash;
         if(password_verify( $password, $hash )){
             $login = true;
         }
