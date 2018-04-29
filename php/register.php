@@ -53,33 +53,38 @@
         if($_POST['password'] != $_POST['confirm-password']){
             die("please enter matching passwords");
         }
-        $username = $_POST['username'];
-        $params = array( &$username );
-        $sql = "SELECT 1 FROM users WHERE username = '?'";
-        $stmt = sqlsrv_query( $conn, $sql, $params );
-        if ( $stmt === true){
-            die("username is already taken");
-        }
+
+        $firstName = $_POST['first-name'];
+        $lastName = $_POST['last-name'];
         $email = $_POST['email'];
-        $params = array( &$email );
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $passwordHash = password_hash( $password, PASSWORD_DEFAULT);
+
+        $sql = "SELECT 1 FROM users WHERE username = '?'";
+        $params = array( &$username );
+        $stmt = sqlsrv_query( $conn, $sql, $params );
+        if( $stmt == false ){
+            die("username already taken");
+        }
+
         $sql = "SELECT 1 FROM users WHERE email = '?'";
-        $stmt = sqlsrv_query( $query, $sql, $params );
-        if ( $stmt === true){
-            die("email is already taken");
+        $params = array( &$email );
+        $stmt = sqlsrv_query( $conn, $sql, $params );
+        if( $stmt == false ){
+            die("email already in use");
         }
-        $firstname = $_POST['first-name'];
-        $lastname = $_POST['last-name'];
-       
-        $userPassword = $_POST['password'];
-        $hash = password_hash( $_POST['password'], PASSWORD_DEFAULT);
-        $sql = "INSERT INTO users (firstName, lastName, username, email, userPassword)
-                VALUES (?, ?, ?, ?, ?)";
-        $params = array( &$firstname, &$lastname, &$username, &$email, &$hash);
-        $stmt = sqlsrv_query( $conn, $sql, $params);
-        if ( $stmt === true ){
-            die("could not execute query.");
+
+        $sql = "INSERT INTO users (firstName, lastName, username, email, password)
+                VALUES (?,?,?,?,?)";
+        $params = array( &$firstName, &$lastName, &$email, &$username, &$passwordHash );
+        $stmt = sqlsrv_query( $conn, $sql, $params );
+        if( $stmt == false ){
+            die("query does not work");
         }
+
         header("Location: login.php");
+
     }
     
     sqlsrv_close( $conn );
