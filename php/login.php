@@ -46,6 +46,7 @@
         } else  {
             while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)){
                 $hash = $row['userPassword'];
+                echo $row['userID'].", ".$row['firstName'].", ".$row['lastName'].", ".$row['email'].", ".$row['userPassword'];
             }
         }
         echo $hash;
