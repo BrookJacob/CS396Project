@@ -36,18 +36,14 @@
         $params = array( &$username );
         $stmt = sqlsrv_query( $conn, $sql, $params );
 
-        while ($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC )){
-            $hash = $row['userPassword'];
-            echo $row['userID'].", ".$row['firstName'].", ".$row['lastName'].", ".$row['email'].", ".$row['userPassword'];
-        }
-
-        echo $hash;
-        if(password_verify( $password, $hash )){
+        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+            echo $row['userPassword']."<br />";
+      }
+        if(password_verify( $password, $row['userPassword'] )){
             $login = true;
         }
-        echo $login;
         if($login){
-            unset($stmt[4]);
+            
             $_SESSION['user'] = $stmt;
 
             header("Location: library.php");
