@@ -20,7 +20,7 @@
 <?php
 	require("common.php");
     $search = $_REQUEST['main-search-bar'];
-	$sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%?%' OR b.author LIKE '%?%' OR b.ISBN13 = '?' OR b.ISBN10 = '?' OR g.genreName LIKE '%?%' AND b.genreID = g.genreID";
+	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%?%' OR b.author LIKE '%?%' OR b.ISBN13 = '?' OR b.ISBN10 = '?' OR g.genreName LIKE '%?%' AND b.genreID = g.genreID";
     $params = array( &$search );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){
@@ -28,7 +28,7 @@
         die( print_r( sqlsrv_errors(), true) );
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
+		echo "<li class='search-result'><a class='search-result-link' href='../result.html?ISBN13=".$row['ISBN13']."'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</a></li>";
 	}
     
     sqlsrv_close( $conn );
