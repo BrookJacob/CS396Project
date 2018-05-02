@@ -41,8 +41,9 @@
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
         echo $row['userPassword']." this is the password ";
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            $hash = trim($row['userPassword']);
+            $hash = substr($row['userPassword'], 0, 60);
         }
+        
         if(password_verify( $password, $hash )){
             unset($row['userPassword']);
             $_SESSION['user'] = $stmt;
