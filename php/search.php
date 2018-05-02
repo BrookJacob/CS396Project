@@ -29,7 +29,7 @@
         echo "oops";
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo "<li class='search-result'><a class='search-result-link' href='../result.html?ISBN13=".$row['ISBN13']."'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</a></li>";
+		echo "<li class='search-result'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</li>";
 	}
     
     sqlsrv_close( $conn );
