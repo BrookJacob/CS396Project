@@ -15,13 +15,14 @@
                 <li class="cheat"></li>
             </ul>
         </div>
-        <div class="backsplash">
+        <div class="backsplash"></div>
+        <div class="search">
             <ul class="search-results">
             <li class="search-result"><a class="search-result-link" href="result.php?ISBN=978-0451524935">1984, George Orwell, Science Fiction</a></li>
 <?php
 	require("common.php");
     $search = $_POST['main-search-bar'];
-	$sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%".$search."%' OR b.author LIKE '%".$search."%' OR b.ISBN13 = '".$search."' OR b.ISBN10 = '".$search."' OR g.genreName LIKE '%".$search."%' AND b.genreID = g.genreID";
+	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%".$search."%' OR b.author LIKE '%".$search."%' OR b.ISBN13 = '".$search."' OR b.ISBN10 = '".$search."' OR g.genreName LIKE '%".$search."%' AND b.genreID = g.genreID";
     $params = array( &$search, &$search, &$search, &$search, &$search );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){
@@ -29,8 +30,8 @@
         die( print_r( sqlsrv_errors(), true) );
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo "<li class='search-result'><a class='search-result-link' href='result.php?ISBN='".$row['ISBN13']."'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</a></li>";
-	}
+		echo '<li class="search-result"><a class="search-result-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a></li>';
+    }
     
     sqlsrv_close( $conn );
 ?>
