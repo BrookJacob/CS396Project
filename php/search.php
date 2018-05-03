@@ -17,6 +17,7 @@
         </div>
         <div class="backsplash">
             <ul class="search-results">
+            <li class="search-result"><a class="search-result-link" href="result.php?ISBN=978-0451524935">1984, George Orwell, Science Fiction</a></li>
 <?php
 	require("common.php");
     $search = $_POST['main-search-bar'];
@@ -28,7 +29,7 @@
         die( print_r( sqlsrv_errors(), true) );
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo "<li class='search-result'><a class='search-result-link' href='result.php?ISBN=".$row['ISBN13']."'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</a></li>";
+		echo "<li class='search-result'><a class='search-result-link' href='result.php?ISBN='".$row['ISBN13']."'>".$row['title'].", ".$row['author'].", ".$row['genreName']."</a></li>";
 	}
     
     sqlsrv_close( $conn );
