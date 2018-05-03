@@ -3,9 +3,11 @@
     <head>
         <title>library books</title>
         <link href="css/main.css" type="text/css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     </head>
-    <body class="splash">
+    <body>
+        <div class="splash"></div>
         <div class="menu-bar">
             <ul class="menu-buttons">
                 <li class="menu-button"><a class="menu-button-link" href="index.html">library books</a></li>
@@ -17,8 +19,9 @@
         </div>
         <div class="searchdiv">
             <form class="main-search-bar" name="search" action="php/search.php?go" method="post">
-                <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre">
-            </form>	
+                <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre" onkeyup="liveResults(this.value)">
+            </form>
+            <div class="live-results"></div>	
         </div>
         <div class="about" id="about">
 			<p class="product-description">library books is a book review aggregation website that provides users with ratings for a given book from various sources on the internet. users will be able to add books to a personal virtual library and view recommendations based on their library.</p>
@@ -43,5 +46,8 @@
 				<input class="feedback-input submit" type="submit" name="submit" value="submit" >
 			</form>
         </div>
+        <script>
+        
+        </script>
     </body>
 </html>
