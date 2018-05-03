@@ -190,9 +190,16 @@ textarea {
   font-size: 3em;
 }
 .signup-input {
+	width: 40%;
 	padding: 8px 10px;
 	margin: 20px;
-	border-color: 1px solid #006989
+	border-bottom: 1px solid #006989;
+	font-family: "Merriweather";
+}
+.Signup-input-submit{
+	padding: 8px 16px;
+	background-color: #006989;
+	font-family: "Merriweather";
 }
 .login {
   background-color: #333333;
