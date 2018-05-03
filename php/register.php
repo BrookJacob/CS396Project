@@ -60,6 +60,7 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         $passwordHash = password_hash( $password, PASSWORD_DEFAULT);
+        echo $passwordHash;
 
         $sql = "SELECT 1 FROM users WHERE username = '?'";
         $params = array( &$username );
@@ -83,7 +84,7 @@
             die("query does not work");
         }
 
-        header("Location: login.php");
+        //header("Location: login.php");
 
     }
     
