@@ -16,7 +16,19 @@
         </div>
         <div class="book-page">
             <?php
-                $ISBN13 = 
+                $ISBN13 = $_GET['ISBN13'];
+                $sql = "SELECT b. ISBN10, b.ISBN13, b.author, b.title, g.genreName FROM books AS b, genres as g WHERE b.ISBN13 = '?' AND g.genreID = b.genreID";
+                $params = array( &$ISBN13);
+
+                $stmt = sqlsrv_query( $conn, $sql, $params);
+
+                if( $stmt === false ){
+                    echo sqlsrv_errors();
+                    die( print_r( sqlsrv_errors(), true) );
+                }
+                while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+                    echo '<div class="book-title">'.$row['title'].'</div><div class="book-author">'.$row['author'].'</div><div class="book-genre">'.$row['genreName'].'</div><div class="book-ISBN10">'.$row['ISBN10'].'</div><div class="book-ISBN13">'.$row['ISBN13'].'</div><div class="book-publisher">'.$row['publisher'].'</div>';
+                }
 
 
             ?>

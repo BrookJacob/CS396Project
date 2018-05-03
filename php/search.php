@@ -30,7 +30,6 @@
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 		echo '<li class="search-result"><a class="search-result-link" href="result.php?ISBN='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a></li>';
-        echo $row['ISBN13'];
     }
     
     sqlsrv_close( $conn );
