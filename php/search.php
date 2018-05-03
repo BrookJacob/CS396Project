@@ -15,7 +15,8 @@
                 <li class="cheat"></li>
             </ul>
         </div>
-        <div class="backsplash">
+        <div class="backsplash"></div>
+        <div class="search">
             <ul class="search-results">
 <?php
 	require("common.php");
