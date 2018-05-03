@@ -59,6 +59,7 @@ body {
   height: 100%;
   position: fixed;
   top: 0px;
+  z-index: -1;
   background-image: url("../images/bookshelf.jpg");
   background-attachment: fixed;
 }
