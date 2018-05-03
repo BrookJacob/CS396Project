@@ -18,7 +18,7 @@
             <?php
                 $ISBN13 = $_GET['ISBN13'];
                 $sql = "SELECT b.ISBN10, b.ISBN13, b.author, b.title, g.genreName FROM books AS b, genres as g WHERE b.ISBN13 = '?' AND g.genreID = b.genreID";
-                $params = array( &$ISBN13);
+                $params = array( &$ISBN13 );
 
                 $stmt = sqlsrv_query( $conn, $sql, $params);
 
