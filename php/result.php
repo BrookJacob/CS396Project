@@ -1,14 +1,11 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-=======
->>>>>>> 155c71a2246dce94b93cd20d460c83583449991c
 <html>
     <head>
         <title>library books</title>
         <link href="../css/main.css" type="text/css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     </head>
-    <body class="splash">
+    <body>
+        <div class="splash"></div>
         <div class="menu-bar">
             <ul class="menu-buttons">
                 <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>
@@ -19,16 +16,13 @@
                 <li class="cheat"></li>
         </div>
         <div class="book-page">
-<<<<<<< HEAD
-            
-=======
             <?php
 
                 require("common.php");
 
                 $ISBN13 = $_GET['ISBN13'];
                 echo $ISBN13;
-                $sql = "SELECT b.ISBN10, b.ISBN13, b.author, b.title, g.genreName FROM books AS b, genres as g WHERE b.ISBN13 = '".$ISBN13."' AND g.genreID = b.genreID";
+                $sql = "SELECT b.ISBN10, b.ISBN13, b.author, b.title, g.genreName, b.publisher FROM books AS b, genres as g WHERE b.ISBN13 = '".$ISBN13."' AND g.genreID = b.genreID";
                 $params = array( &$ISBN13 );
 
                 $stmt = sqlsrv_query( $conn, $sql, $params);
@@ -41,7 +35,6 @@
                 echo '<div class="book-title">'.$row['title'].'</div><div class="book-author">'.$row['author'].'</div><div class="book-genre">'.$row['genreName'].'</div><div class="book-ISBN10">'.$row['ISBN10'].'</div><div class="book-ISBN13">'.$row['ISBN13'].'</div><div class="book-publisher">'.$row['publisher'].'</div>';
 
             ?>
->>>>>>> 155c71a2246dce94b93cd20d460c83583449991c
         </div>
     </body>
 </html>

@@ -4,8 +4,8 @@
     <link href="../css/main.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
-    <body class="splash">
-        <div class="backsplash"></div>
+    <body>
+        <div class="splash"></div>
         <div class="menu-bar">
             <ul class="menu-buttons">
                 <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>

@@ -3,6 +3,7 @@
     <title>library books</title>
     <link href="../css/main.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
     <body class="splash">
         <div class="menu-bar">
@@ -15,10 +16,10 @@
                 <li class="cheat"></li>
             </ul>
         </div>
-        <div class="backsplash"></div>
+        <div class="splash"></div>
         <div class="search">
             <ul class="search-results">
-            <li class="search-result"><a class="search-result-link" href="result.php?ISBN=978-0451524935">1984, George Orwell, Science Fiction</a></li>
+            <li class="search-result"><a class="search-result-link" href="result.php?ISBN=978-0451524935">1984, George Orwell, Science Fiction</a><i class="material-icons">menu</i><div class="hidden-add"><a class="hidden-add-link">add to my library</a></div></li>
 <?php
 	require("common.php");
     $search = $_POST['main-search-bar'];
@@ -30,7 +31,7 @@
         die( print_r( sqlsrv_errors(), true) );
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo '<li class="search-result"><a class="search-result-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a></li>';
+		echo '<li class="search-result"><a class="search-result-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a><a href="  "><i class="material-icons">menu</i></a><div class="hidden-add"><a class="hidden-add-link">add to my library</a></div></li>';
     }
     
     sqlsrv_close( $conn );
