@@ -39,11 +39,7 @@
             die( print_r( sqlsrv_errors(), true) );
         }
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
-        echo $row['userPassword']." this is the password ";
         $hash = $row['userPassword'];
-        //while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            
-        //}
         
         if(password_verify( $password, $hash )){
             unset($row['userPassword']);
