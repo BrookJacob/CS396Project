@@ -189,6 +189,11 @@ textarea {
   text-align: center;
   font-size: 3em;
 }
+.signup-input {
+	padding: 8px 10px;
+	margin: 20px;
+	border-color: 1px solid #006989
+}
 .login {
   background-color: #333333;
   top: 200px;
