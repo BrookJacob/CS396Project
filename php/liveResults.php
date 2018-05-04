@@ -5,6 +5,7 @@
         $sql = "SELECT b.title, b.author, g.genreName FROM books AS b, genres AS g WHERE b.title LIKE '%?%' OR b.author LIKE '%?%' OR g.genreName LIKE '%?%' OR ISBN10 = '?' OR ISBN13 = '?' AND g.genreID = b.genreID";
         $params = array( &$q );
         $stmt = sqlsrv_query( $conn, $sql, $params);
+        echo sqlsrv_errors();
 
         if ($stmt == false){
             echo sqlsrv_errors();
