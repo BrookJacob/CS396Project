@@ -102,6 +102,10 @@ body {
   border: none;
   border-bottom: 3px solid #006989;
 }
+.live-results {
+  width: 500px;
+  background-color: white;
+}
 .about {
   background-color: #333333;
   width: 100%;
@@ -193,10 +197,6 @@ textarea {
   position: absolute;
   right: 0px;
   top: 0px;
-}
-.material-icons:hover + .search-result {
-  color: #006989;
-  border-color: #cccccc;
 }
 .hidden-add {
   display: none;
