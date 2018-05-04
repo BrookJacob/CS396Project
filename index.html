@@ -47,7 +47,25 @@
 			</form>
         </div>
         <script>
-        
+            function liveResults(str) {
+                if (str == ""){
+                    document.getElementById("live-results").innerHTML = "";
+                    return;
+                } else {
+                    if (window.XMLHttpRequest) {
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.onreadystatechange = function() {
+                        if(this.readyState == 4 && this.status == 200) {
+                            document.getElementById("live-results").innerHTML = this.responseText;
+                        }
+                    };
+                    xmlhttp.open("GET", "liveResults.php?q="+str, true);
+                    xmlhttp.send();
+                }
+            }
         </script>
     </body>
 </html>
