@@ -170,6 +170,7 @@ textarea {
   color: #cccccc;
 }
 .search-result {
+  position: relative;
   margin-bottom: 10px;
   padding: 2px;
   border-width: 0px 0px 1px 0px;
@@ -189,9 +190,9 @@ textarea {
 }
 .material-icons {
   color: #cccccc;
-  position: relative;
-  top: 7px;
-  left: 206px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 .material-icons:hover + .search-result {
   color: #006989;
