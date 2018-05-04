@@ -47,25 +47,29 @@
 			</form>
         </div>
         <script>
-            function liveResults(str) {
-                if (str == ""){
-                    document.getElementById("live-results").innerHTML = "";
-                    return;
-                } else {
-                    if (window.XMLHttpRequest) {
-                        xmlhttp = new XMLHttpRequest();
-                    } else {
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                    }
-                    xmlhttp.onreadystatechange = function() {
-                        if(this.readyState == 4 && this.status == 200) {
-                            document.getElementById("live-results").innerHTML = this.responseText;
-                        }
-                    };
-                    xmlhttp.open("GET", "liveResults.php?q="+str, true);
-                    xmlhttp.send();
-                }
+            function fill(Value){
+                $(".main-search-bar").val(Value);
+                $(".live-results").hide();
             }
+            $(document).ready(function(){
+                $(".main-search-bar").keyup(function(){
+                    var q = $("main-search-bar").val();
+                    if(q == ""){
+                        $(".live-results").html("");
+                    } else {
+                        $.ajax({
+                            type: "POST",
+                            url: "liveResults.php",
+                            data: {
+                                search: q
+                            },
+                            success: function(html) {
+                                $(".live-results").html(html).show();
+                            }
+                        });
+                    }
+                });
+            });
         </script>
     </body>
 </html>
