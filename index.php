@@ -16,17 +16,15 @@
                 <li class="menu-button"><a class="menu-button-link" href="index.php#about">about</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="index.php#feedback">feedback</a></li>
                 <?php
-                chdir('D:\home\site\wwwroot');
                 if(empty($_SESSION['user'])){
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href='.realpath('php/login.php').'>sign in</a></li>';
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href='.realpath('php/register.php').'>sign up</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/login.php">sign in</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/register.php">sign up</a></li>';
                     echo '<li class="cheat"></li>';
                 } else {
-                    echo '<li class="menu-button"><a class="menu-button-link" href='.realpath('php/library.php').'>my library</a></li>';
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href='.realpath('php/account.php').'>account</a></li>';
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href='.realpath('php/logout.php').'>log out</a></li>';
+                    echo '<li class="menu-button"><a class="menu-button-link" href=\'php/library.php\'>my library</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/account.php">account</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/logout.php">log out</a></li>';
                     echo '<li class="cheat"></li>';
-                    echo realpath('php/logout.php');
                 }
                 ?>
         </div>
