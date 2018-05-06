@@ -17,7 +17,7 @@
                     echo '<li class="menu-button menu-right"><a class="menu-button-link" href="register.php">sign up</a></li>';
                     echo '<li class="cheat"></li>';
                 } else {
-                    echo '<li class="menu-button"><a class="menu-button-link" href="library.php">my library</a></li>'
+                    echo '<li class="menu-button"><a class="menu-button-link" href="library.php">my library</a></li>';
                     echo '<li class="menu-button menu-right"><a class="menu-button-link" href="account.php">account</a></li>';
                     echo '<li class="menu-button menu-right"><a class="menu-button-link" href="logout.php">log out</a></li>';
                     echo '<li class="cheat"></li>';
