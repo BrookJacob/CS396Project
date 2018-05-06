@@ -16,6 +16,7 @@
                 <li class="menu-button"><a class="menu-button-link" href="index.php#about">about</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="index.php#feedback">feedback</a></li>
                 <?php
+                chdir('D:\home\site\wwwroot\');
                 if(empty($_SESSION['user'])){
                     echo '<li class="menu-button menu-right"><a class="menu-button-link" href='.realpath('php/login.php').'>sign in</a></li>';
                     echo '<li class="menu-button menu-right"><a class="menu-button-link" href='.realpath('php/register.php').'>sign up</a></li>';
