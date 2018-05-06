@@ -283,11 +283,14 @@ textarea {
   margin: 150px auto;
   border-bottom: 3px solid #006989;
   padding: 10px;
+  position:static;
 }
 .book-ISBN10{
 font-size: 4em;
 font-family: merriweather;
 position: absolute;
+bottom:0px;
+right:0px;
 }
 .book-title {
 top: 0px;
@@ -297,11 +300,11 @@ font-family: merriweather;
 position: absolute;
 }
 .book-author{
-  bottom:0px;
-  right:0px;
 font-size: 4em;
 font-family: merriweather;
 position: absolute;
+bottom:0px;
+right:0px;
 }
 .book-genre{
 font-size: 4em;
