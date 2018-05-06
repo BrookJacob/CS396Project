@@ -287,8 +287,8 @@ textarea {
 }
 
 .book-title {
-top: 50px;
-left:0px;
+top: 0px;
+left:50px;
 font-size: 5em;
 font-family: merriweather;
 position: absolute;
