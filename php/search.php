@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="splash"></div>
-        <div class="searchdiv">
+        <div class="results-search-bar">
             <form class="main-search-bar" name="search" action="php/search.php?go" method="post">
                 <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre" autocomplete="off">
             </form>

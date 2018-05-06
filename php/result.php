@@ -15,7 +15,7 @@
                 <li class="menu-button menu-right"><a class="menu-button-link" href="php/register.php">sign up</a></li>
                 <li class="cheat"></li>
         </div>
-        <div class="searchdiv">
+        <div class="result-search-bar">
             <form class="main-search-bar" name="search" action="php/search.php?go" method="post">
                 <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre" autocomplete="off">
             </form>
