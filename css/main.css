@@ -149,21 +149,25 @@ body {
 }
 .feedback-form {
   background-color: #333333;
-  height: 250px;
+  height: 300px;
   width: 100%;
+  border-bottom: 3px solid #006989
 }
 .feedback-form p {
   font-size: 2em;
   text-align: center;
 }
 .feedback-input {
- width: 50%;
+ width: 40%;
  display: block;
  margin: auto;
+ padding: 6px 10px;
+ border-bottom: 3px solid #006986;
 }
 textarea {
   resize: vertical;
   font-family: "Merriweather";
+  border-bottom: 2px solid #006989;
 }
 .search-results {
   height: 100%;
@@ -231,13 +235,13 @@ textarea {
 }
 .signup-input {
 	width: 40%;
-	padding: 8px 10px;
+	padding: 6px 10px;
 	margin: 20px;
-	border-bottom: 2px solid #006989;
+	border-bottom: 3px solid #006989;
 	font-family: "Merriweather";
 }
 .Signup-input-submit{
-	padding: 8px 16px;
+	padding: 6px 16px;
 	background-color: #006989;
 	font-family: "Merriweather";
 }
@@ -245,7 +249,7 @@ textarea {
   background-color: #333333;
   top: 200px;
   width: 70%;
-  height: 70%;
+  height: 50%;
   margin: 150px auto;
   border-bottom: 3px solid #006989;
 }
@@ -253,6 +257,13 @@ textarea {
   display: block;
   text-align: center;
   font-size: 3em;
+}
+.login-input{
+  width: 40%;
+	padding: 5px 10px;
+	margin: 20px;
+	border-bottom: 3px solid #006989;
+	font-family: "Merriweather";
 }
 .book-page {
   background-color: #333333;
