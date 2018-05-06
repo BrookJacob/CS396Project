@@ -294,35 +294,35 @@ font-family: merriweather;
 position: absolute;
 }
 .book-author{
-font-size: 1em;
+font-size: 2em;
 font-family: merriweather;
 position: absolute;
 top: 120px;
 left: 5px;
 }
 .book-publisher{
-  font-size: 1em;
+  font-size: 2em;
   font-family: merriweather;
   position: absolute;
   top: 180px;
   left: 5px;
   }
 .book-genre{
-font-size: 1em;
+font-size: 2em;
 font-family: merriweather;
 position: absolute;
 top: 240px;
 left: 5px;
 }
 .book-ISBN10{
-  font-size: 1em;
+  font-size: 2em;
   font-family: merriweather;
   position: absolute;
   top: 300px;
   left: 5px;
   }
 .book-ISBN13{
-font-size: 1em;
+font-size: 2em;
 font-family: merriweather;
 position: absolute;
 top: 360px;
