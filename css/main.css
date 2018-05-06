@@ -105,10 +105,12 @@ body {
 .results-search-bar {
   position: absolute;
   top: 75px;
+  width: 100%;
 }
 .result-search-bar {
   position: absolute;
   top: 75px;
+  width: 100%;
 }
 .live-results {
   width: 500px;
