@@ -40,7 +40,7 @@
         }
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
         echo $row['username'];
-        
+        echo "this sucks";
         $hash = $row['userPassword'];
         
         if(password_verify( $password, $hash )){
