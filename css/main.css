@@ -289,42 +289,42 @@ textarea {
 .book-title {
 top: 0px;
 left:0px;
-font-size: 4em;
+font-size: 5em;
 font-family: merriweather;
 position: absolute;
 }
 .book-author{
-font-size: 2em;
+font-size: 1.5em;
 font-family: merriweather;
 position: absolute;
 top: 120px;
 left: 5px;
 }
 .book-publisher{
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: merriweather;
   position: absolute;
-  top: 180px;
+  top: 160px;
   left: 5px;
   }
 .book-genre{
-font-size: 2em;
+font-size: 1.5em;
 font-family: merriweather;
 position: absolute;
-top: 240px;
+top: 200px;
 left: 5px;
 }
 .book-ISBN10{
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: merriweather;
   position: absolute;
-  top: 300px;
+  top: 240px;
   left: 5px;
   }
 .book-ISBN13{
-font-size: 2em;
+font-size: 1.5em;
 font-family: merriweather;
 position: absolute;
-top: 360px;
+top: 280px;
 left: 5px;
 }
