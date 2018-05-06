@@ -17,13 +17,13 @@
                 <li class="menu-button"><a class="menu-button-link" href="index.php#feedback">feedback</a></li>
                 <?php
                 if(empty($_SESSION['user'])){
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/login.php">sign in</a></li>';
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/register.php">sign up</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href=\'php/login.php\'>sign in</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href=\'php/register.php\'>sign up</a></li>';
                     echo '<li class="cheat"></li>';
                 } else {
                     echo '<li class="menu-button"><a class="menu-button-link" href=\'php/library.php\'>my library</a></li>';
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/account.php">account</a></li>';
-                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="php/logout.php">log out</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href=\'php/account.php\'>account</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href=\'php/logout.php\'>log out</a></li>';
                     echo '<li class="cheat"></li>';
                 }
                 ?>
