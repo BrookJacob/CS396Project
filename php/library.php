@@ -11,9 +11,18 @@
             <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="../index.html#about">about</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="../index.html#feedback">feedback</a></li>
-                <li class="menu-button menu-right"><a class="menu-button-link" href="login.php">sign in</a></li>
-                <li class="menu-button menu-right"><a class="menu-button-link" href="register.php">sign up</a></li>
-                <li class="cheat"></li>
+                <?php 
+                if(empty($_SESSION['user'])){
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="login.php">sign in</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="register.php">sign up</a></li>';
+                    echo '<li class="cheat"></li>';
+                } else {
+                    echo '<li class="menu-button"><a class="menu-button-link" href="library.php">my library</a></li>'
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="account.php">account</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="logout.php">log out</a></li>';
+                    echo '<li class="cheat"></li>';
+                }
+                ?>
             </ul>
         </div>
         <div class="splash"></div>
@@ -31,7 +40,6 @@
         header("Location: login.php");
         die("Redirecting to login.php");
     }
-    echo $_SESSION['user']['username'];
 
 ?>
     </body>
