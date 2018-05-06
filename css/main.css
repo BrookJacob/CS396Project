@@ -298,33 +298,33 @@ font-size: 1.5em;
 font-family: merriweather;
 position: absolute;
 top: 120px;
-left: 5px;
+left: 10px;
 }
 .book-publisher{
   font-size: 1.5em;
   font-family: merriweather;
   position: absolute;
   top: 160px;
-  left: 5px;
+  left: 10px;
   }
 .book-genre{
 font-size: 1.5em;
 font-family: merriweather;
 position: absolute;
 top: 200px;
-left: 5px;
+left: 10px;
 }
 .book-ISBN10{
   font-size: 1.5em;
   font-family: merriweather;
   position: absolute;
   top: 240px;
-  left: 5px;
+  left: 10px;
   }
 .book-ISBN13{
 font-size: 1.5em;
 font-family: merriweather;
 position: absolute;
 top: 280px;
-left: 5px;
+left: 10px;
 }
