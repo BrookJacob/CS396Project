@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
 <body>
-    <div class="splash"></div>>
+    <div class="splash"></div>
     <div class="menu-bar">
         <ul class="menu-buttons">
             <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>
@@ -36,14 +36,17 @@
         $stmt = sqlsrv_query( $conn, $sql, $params );
         echo sqlsrv_errors();
         if( $stmt === false) {
+            echo "you buffon";
             die( print_r( sqlsrv_errors(), true) );
         }
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
+        echo $row['username'];
+        echo "this sucks";
         $hash = $row['userPassword'];
         
         if(password_verify( $password, $hash )){
             unset($row['userPassword']);
-            $_SESSION['user'] = $stmt;
+            $_SESSION['user'] = $row;
 
             header("Location: library.php");
             die("Redirecting to: library.php");

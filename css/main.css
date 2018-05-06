@@ -102,6 +102,16 @@ body {
   border: none;
   border-bottom: 3px solid #006989;
 }
+.results-search-bar {
+  position: absolute;
+  top: 75px;
+  width: 100%;
+}
+.result-search-bar {
+  position: absolute;
+  top: 75px;
+  width: 100%;
+}
 .live-results {
   width: 500px;
   background-color: white;
@@ -171,7 +181,7 @@ textarea {
 }
 .search-results {
   height: 100%;
-  margin: 200px 100px 0px 100px;
+  margin: 150px 100px 0px 100px;
   padding: 20px;
   list-style-type: none;
   background-color: #333333;
