@@ -283,35 +283,34 @@ textarea {
   margin: 150px auto;
   border-bottom: 3px solid #006989;
   padding: 10px;
-  position: absolute;
 }
 .book-ISBN10{
 font-size: 4em;
 font-family: merriweather;
-position: relative;
+position: absolute;
 }
 .book-title {
 font-size: 6em;
 font-family: merriweather;
-position: relative;
+position: absolute;
 }
 .book-author{
 font-size: 4em;
 font-family: merriweather;
-position: relative;
+position: absolute;
 }
 .book-genre{
 font-size: 4em;
 font-family: merriweather;
-position: relative;
+position: absolute;
 }
 .book-ISBN13{
 font-size: 4em;
 font-family: merriweather;
-position: relative;
+position: absolute;
 }
 .book-publisher{
 font-size: 4em;
 font-family: merriweather;
-position: relative;
+position: absolute;
 }
