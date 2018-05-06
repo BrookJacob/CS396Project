@@ -17,6 +17,12 @@
             </ul>
         </div>
         <div class="splash"></div>
+        <div class="searchdiv">
+            <form class="main-search-bar" name="search" action="php/search.php?go" method="post">
+                <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre" autocomplete="off">
+            </form>
+            <div class="live-results"></div>	
+        </div>
         <div class="search">
             <ul class="search-results">
             <li class="search-result"><a class="search-result-link" href="result.php?ISBN=978-0451524935">1984, George Orwell, Science Fiction</a><i class="material-icons">menu</i><div class="hidden-add"><a class="hidden-add-link">add to my library</a></div></li>
