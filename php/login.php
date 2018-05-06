@@ -43,7 +43,7 @@
         
         if(password_verify( $password, $hash )){
             unset($row['userPassword']);
-            $_SESSION['user'] = $stmt;
+            $_SESSION['user'] = $row;
 
             header("Location: library.php");
             die("Redirecting to: library.php");
