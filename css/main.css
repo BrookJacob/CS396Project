@@ -283,7 +283,7 @@ textarea {
   margin: 150px auto;
   border-bottom: 3px solid #006989;
   padding: 10px;
-  position:static;
+  position:relative;
 }
 .book-ISBN10{
 font-size: 4em;
