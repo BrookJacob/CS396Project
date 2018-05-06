@@ -102,6 +102,14 @@ body {
   border: none;
   border-bottom: 3px solid #006989;
 }
+.results-search-bar {
+  position: absolute;
+  top: 75px;
+}
+.result-search-bar {
+  position: absolute;
+  top: 75px;
+}
 .live-results {
   width: 500px;
   background-color: white;
