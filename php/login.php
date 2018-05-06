@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
 <body>
-    <div class="splash"></div>>
+    <div class="splash"></div>
     <div class="menu-bar">
         <ul class="menu-buttons">
             <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>
