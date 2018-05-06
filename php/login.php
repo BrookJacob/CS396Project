@@ -18,8 +18,8 @@
     </div>
     <form class="login" action="login.php" method="post">
         <h>sign in</h>
-        <input class="login-input" type="text" placeholder="username" name="username">
-        <input class="login-input" type="password" placeholder="password" name="password">
+        <input class="login-input" type="text" placeholder="Username" name="username">
+        <input class="login-input" type="password" placeholder="Password" name="password"><br>
         <input class="login-input submit" type="submit">
     </form>
 <?php
