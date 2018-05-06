@@ -11,9 +11,9 @@
     <body class="splash">
         <div class="menu-bar">
             <ul class="menu-buttons">
-            <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>
-                <li class="menu-button"><a class="menu-button-link" href="../index.html#about">about</a></li>
-                <li class="menu-button"><a class="menu-button-link" href="../index.html#feedback">feedback</a></li>
+            <li class="menu-button"><a class="menu-button-link" href="../index.php">library books</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="../index.php#about">about</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="../index.php#feedback">feedback</a></li>
                 <?php
                 if(empty($_SESSION['user'])){
                     echo '<li class="menu-button menu-right"><a class="menu-button-link" href="login.php">sign in</a></li>';
