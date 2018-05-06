@@ -330,6 +330,7 @@ left: 120px;
 }
 .account {
   position: relative;
+  background-color: #333333;
   top: 200px;
   width: 70%;
   height: 70%;
