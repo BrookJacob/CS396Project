@@ -14,4 +14,5 @@
         echo "Connection could not be established.";
         die( print_r( sqlsrv_errors(), true));
     }
+    session_start();
 ?>

@@ -29,11 +29,19 @@
             </ul>
         </div>
         <div class="splash"></div>
-        <div class="results-search-bar">
-            <form class="main-search-bar" name="search" action="search.php?go" method="post">
-                <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre" autocomplete="off">
+        
+        <div class="account">
+            <form class="account-details" method="post">
+                <input class="account-input" type="text" placeholder="first name" name="firstName">
+                <input class="account-input" type="text" placeholder="last name" name="lastName">
+                <input class="account-input" type="text" placeholder="email" name="email">
+                <input class="account-input" type="text" placeholder="old password" name="old-password">
+                <input class="account-input" type="text" placeholder="new password" name="new-password">
+                <input class="account-input" type="text" placeholder="confirm new password" name="confirm-password">
+                <input class="account-input" type="submit" value="update">
+                <input class="account-input" type="submit" value="delete your account">
             </form>
-            <div class="live-results"></div>	
+
         </div>
 <?php
 
@@ -43,6 +51,7 @@
         header("Location: login.php");
         die("Redirecting to login.php");
     }
+    
 
 ?>
     </body>

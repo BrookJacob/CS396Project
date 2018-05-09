@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
 <head>
     <title>library books</title>
@@ -8,23 +11,32 @@
         <div class="splash"></div>
         <div class="menu-bar">
             <ul class="menu-buttons">
-                <li class="menu-button"><a class="menu-button-link" href="../index.html">library books</a></li>
-                <li class="menu-button"><a class="menu-button-link" href="../index.html#about">about</a></li>
-                <li class="menu-button"><a class="menu-button-link" href="../index.html#feedback">feedback</a></li>
-                <li class="menu-button menu-right"><a class="menu-button-link" href="login.php">sign in</a></li>
-                <li class="menu-button menu-right"><a class="menu-button-link" href="register.php">sign up</a></li>
-                <li class="cheat"></li>
+                <li class="menu-button"><a class="menu-button-link" href="../index.php">library books</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="../index.php#about">about</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="../index.php#feedback">feedback</a></li>
+                <?php
+                if(empty($_SESSION['user'])){
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="login.php">sign in</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="register.php">sign up</a></li>';
+                    echo '<li class="cheat"></li>';
+                } else {
+                    echo '<li class="menu-button"><a class="menu-button-link" href="library.php">my library</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="account.php">account</a></li>';
+                    echo '<li class="menu-button menu-right"><a class="menu-button-link" href="logout.php">log out</a></li>';
+                    echo '<li class="cheat"></li>';
+                }
+                ?>
             </ul>
         </div>
             <form class="signup" action="register.php" method="post">
                 <h>sign up</h>
-                <input class="signup-input" type="text" placeholder="first name" name="first-name">
-                <input class="signup-input" type="text" placeholder="last name" name="last-name"><br>
-                <input class="signup-input" type="text" placeholder="email" name="email"><br>
-				<input class="signup-input" type="text" placeholder="username" name="username"><br>
-                <input class="signup-input" type="password" placeholder="password" name="password">
-                <input class="signup-input" type="password" placeholder="confirm password" name="confirm-password"><br>
-				<input class="signup-input submit" type="submit" value="submit">
+                <input class="signup-input" type="text" placeholder="First Name" name="first-name">
+                <input class="signup-input" type="text" placeholder="Last Name" name="last-name"><br>
+                <input class="signup-input" type="text" placeholder="Email" name="email"><br>
+				<input class="signup-input" type="text" placeholder="Username" name="username"><br>
+                <input class="signup-input" type="password" placeholder="Password" name="password">
+                <input class="signup-input" type="password" placeholder="Confirm Password" name="confirm-password"><br>
+				<input class="signup-input submit" type="submit" value="Submit">
 			</form>
 <?php
 

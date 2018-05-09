@@ -99,7 +99,21 @@ body {
 	font-family: "merriweather";
   font-size:1.25em;
   border: none;
-   border-bottom: 3px solid #006989;
+  border-bottom: 3px solid #006989;
+}
+.results-search-bar {
+  position: absolute;
+  top: 75px;
+  width: 100%;
+}
+.result-search-bar {
+  position: absolute;
+  top: 75px;
+  width: 100%;
+}
+.live-results {
+  width: 500px;
+  background-color: white;
 }
 .about {
   background-color: #333333;
@@ -144,31 +158,36 @@ body {
 }
 .feedback-form {
   background-color: #333333;
-  height: 250px;
+  height: 300px;
   width: 100%;
+  border-bottom: 3px solid #006989
 }
 .feedback-form p {
   font-size: 2em;
   text-align: center;
 }
 .feedback-input {
- width: 50%;
+ width: 40%;
  display: block;
  margin: auto;
+ padding: 6px 10px;
+ border-bottom: 3px solid #006986;
 }
 textarea {
   resize: vertical;
   font-family: "Merriweather";
+  border-bottom: 2px solid #006989;
 }
 .search-results {
   height: 100%;
-  margin: 200px 100px 0px 100px;
+  margin: 150px 100px 0px 100px;
   padding: 20px;
   list-style-type: none;
   background-color: #333333;
   color: #cccccc;
 }
 .search-result {
+  position: relative;
   margin-bottom: 10px;
   padding: 2px;
   border-width: 0px 0px 1px 0px;
@@ -188,13 +207,9 @@ textarea {
 }
 .material-icons {
   color: #cccccc;
-  position: relative;
-  top: 7px;
-  left: 206px;
-}
-.material-icons:hover + .search-result {
-  color: #006989;
-  border-color: #cccccc;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 .hidden-add {
   display: none;
@@ -229,13 +244,13 @@ textarea {
 }
 .signup-input {
 	width: 40%;
-	padding: 8px 10px;
+	padding: 6px 10px;
 	margin: 20px;
-	border-bottom: 2px solid #006989;
+	border-bottom: 3px solid #006989;
 	font-family: "Merriweather";
 }
 .Signup-input-submit{
-	padding: 8px 16px;
+	padding: 6px 16px;
 	background-color: #006989;
 	font-family: "Merriweather";
 }
@@ -243,7 +258,7 @@ textarea {
   background-color: #333333;
   top: 200px;
   width: 70%;
-  height: 70%;
+  height: 50%;
   margin: 150px auto;
   border-bottom: 3px solid #006989;
 }
@@ -252,10 +267,71 @@ textarea {
   text-align: center;
   font-size: 3em;
 }
+.login-input{
+  width: 40%;
+	padding: 5px 10px;
+	margin: 20px;
+	border-bottom: 3px solid #006989;
+	font-family: "Merriweather";
+}
 .book-page {
   background-color: #333333;
   top: 200px;
   width: 70%;
   height: 70%;
   margin: 150px auto;
+  border-bottom: 3px solid #006989;
+  padding: 10px;
+  position:relative;
+}
+.book-title {
+top: 10px;
+left:250px;
+font-size: 5em;
+color: #006989;
+font-family: merriweather;
+position: absolute;
+}
+.book-author{
+font-size: 1.5em;
+font-family: merriweather;
+position: absolute;
+top: 110px;
+left: 270px;
+}
+.book-publisher{
+  font-size: 1.5em;
+  font-family: merriweather;
+  position: absolute;
+  top: 140px;
+  left: 270px;
+  }
+.book-genre{
+font-size: 1.5em;
+font-family: merriweather;
+position: absolute;
+top: 170px;
+left: 270px;
+}
+.book-ISBN10{
+  font-size: 1.5em;
+  font-family: merriweather;
+  position: absolute;
+  top: 200px;
+  left: 270px;
+  }
+.book-ISBN13{
+font-size: 1.5em;
+font-family: merriweather;
+position: absolute;
+top: 230px;
+left: 270px;
+}
+.account {
+  position: relative;
+  background-color: #333333;
+  top: 200px;
+  width: 70%;
+  height: 70%;
+  margin: auto;
 }
