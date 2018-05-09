@@ -29,7 +29,6 @@
             </ul>
         </div>
         <div class="splash"></div>
-        
         <div class="account">
             <form class="account-details" method="post">
                 <p>update your name</p>
