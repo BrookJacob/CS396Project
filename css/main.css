@@ -287,7 +287,7 @@ textarea {
 .book-title {
 top: 10px;
 left:250px;
-font-size: 5em;
+font-size: 4em;
 color: #006989;
 font-family: merriweather;
 position: absolute;
@@ -334,4 +334,20 @@ left: 270px;
   width: 70%;
   height: 70%;
   margin: auto;
+}
+.add-button {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  height: 50px;
+}
+.add-button-link {
+  display: block;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #cccccc;
+  padding: 14px 16px;
 }
