@@ -32,13 +32,17 @@
         
         <div class="account">
             <form class="account-details" method="post">
+                <p>update your name</p>
                 <input class="account-input" type="text" placeholder="first name" name="firstName">
-                <input class="account-input" type="text" placeholder="last name" name="lastName">
-                <input class="account-input" type="text" placeholder="email" name="email">
-                <input class="account-input" type="text" placeholder="old password" name="old-password">
-                <input class="account-input" type="text" placeholder="new password" name="new-password">
-                <input class="account-input" type="text" placeholder="confirm new password" name="confirm-password">
-                <input class="account-input" type="submit" value="update">
+                <input class="account-input" type="text" placeholder="last name" name="lastName"><br />
+                <p>update your email</p>
+                <input class="account-input" type="text" placeholder="email" name="email"><br />
+                <p>update your password</p>
+                <input class="account-input" type="text" placeholder="old password" name="old-password"><br />
+                <input class="account-input" type="text" placeholder="new password" name="new-password"><br />
+                <input class="account-input" type="text" placeholder="confirm new password" name="confirm-password"><br />
+                <input class="account-input" type="submit" value="update"><br />
+                <p>delete your account</p>
                 <input class="account-input" type="submit" value="delete your account">
             </form>
 
