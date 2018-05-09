@@ -77,6 +77,12 @@ body {
   height: 100vh;
   padding-top: 45vh;
 }
+.live-results {
+  display: none;
+  width: 500px;
+  margin: auto;
+  background: white; 
+}
 .mylibrary {
 	background-image: url("../images/bookshelf.jpg");
 	background-attachment: fixed;
@@ -85,13 +91,6 @@ body {
 }
 .search{
 	overflow: hidden;
-}
-.search-bar {
-	position:fixed;
-	top: 17px;
-	right:20px;
-  font-family: "merriweather";
-  border: none;
 }
 .main-search-bar {
 	margin:auto;
