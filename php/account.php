@@ -42,7 +42,7 @@
                 <input class="account-input" type="text" placeholder="confirm new password" name="confirm-password"><br />
                 <input class="account-input" type="submit" value="update"><br />
                 <p>delete your account</p>
-                <input class="account-input" type="submit" value="delete your account">
+                <input class="account-input" type="submit" value="delete your account" action="delete()">
             </form>
 
         </div>
@@ -53,6 +53,13 @@
     if(empty($_SESSION['user'])){
         header("Location: login.php");
         die("Redirecting to login.php");
+    }
+
+    function delete() {
+        echo "are you sure? this can't be undone.";
+    }
+    if(!empty($_POST)){
+
     }
     
 
