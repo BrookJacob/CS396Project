@@ -342,7 +342,8 @@ textarea {
 }
 .account-details input {
   width: 40%;
-	margin-bottom: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 	border-bottom: 3px solid #006989;
 	font-family: "Merriweather";
 }
