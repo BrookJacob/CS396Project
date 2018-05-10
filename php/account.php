@@ -108,6 +108,7 @@
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
         $password = trim($_POST['password']);
         $hash = trim($row['userPassword']);
+        echo $hash;
         if(empty($_POST['old-password']) || empty($_POST['new-password']) || empty($_POST['confirm-password'])) {
             echo 'all password fields must be filled out';
         } else if(!password_verify( $password, $hash )) {
