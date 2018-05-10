@@ -343,15 +343,10 @@ textarea {
 	font-family: "Merriweather";
 }
 .add-button-link{
-  float: right;
+  float: left;
   text-decoration: none;
   color: #cccccc;
   font-family: merriweather;
- 
-}
-.add-results{
-  float: right;
-  text-decoration: none;
-  color: #cccccc;
-  font-family: merriweather;
+  border-bottom: 3px solid #006989;
+  font-size: 1em;
 }
