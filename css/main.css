@@ -335,6 +335,11 @@ textarea {
   height: 70%;
   margin: auto;
 }
+.account p {
+  width: 50%;
+  text-align: center;
+  font-size: 1.5em;
+}
 .account-details input {
   width: 40%;
   margin-bottom: 10px;
