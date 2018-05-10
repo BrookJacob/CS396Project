@@ -337,7 +337,7 @@ textarea {
 }
 .account p {
   width: 50%;
-  text-align: center;
+  margin-left: 10px;
   font-size: 1.5em;
 }
 .account-details input {
