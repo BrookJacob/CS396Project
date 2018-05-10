@@ -85,7 +85,7 @@
         }
     }
     $sql = "SELECT userPassword FROM users WHERE userID = ?";
-    $params = ( &$userID );
+    $params = array( &$userID );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){
         die( print_r( sqlsrv_errors(), true) );
