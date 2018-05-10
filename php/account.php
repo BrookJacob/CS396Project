@@ -85,7 +85,8 @@
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !filter_var($_POST['confirm-email'], FILTER_VALIDATE_EMAIL)){
             echo 'not a valid email address';
         } else if( $row ) {
-            echo 'username is already in use';
+            echo $_POST['email'];
+            echo 'email is already in use';
         } else if($_POST['email'] != $_POST['confirm-email']) {
            echo 'passwords do not match.';
         }
