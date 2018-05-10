@@ -359,3 +359,12 @@ textarea {
 .add-button-link:hover{
   border-color: #cccccc;
 }
+.add-results{
+  top: 20px;
+  width: 70%;
+  height: 70%;
+  align: center;
+  border-bottom: 3px solid #006989;
+  padding: 10px;
+  position:relative;
+}
