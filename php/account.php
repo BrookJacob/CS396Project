@@ -88,7 +88,7 @@
             echo 'username is already in use';
         } else if($_POST['email'] != $_POST['confirm-email']) {
             $email = $_POST['email'];
-            $sql = "UPDATE users SET lastName = ? WHERE userID = ?";
+            $sql = "UPDATE users SET email = ? WHERE userID = ?";
             $params = array( &$lastName, &$userID);
             $stmt = sqlsrv_query( $conn, $sql, $params);
             if( $stmt === false ){
