@@ -356,3 +356,6 @@ textarea {
   font-size: 1em;
   margin-bottom: 10px;
 }
+.add-button-link:hover{
+  border-color: #cccccc;
+}

@@ -24,14 +24,14 @@
                 }
                 ?>
             </ul>
+            <div>
+                <form class="add results" action="add results.php" method="post">
+                <input class="add-results" type="text" placeholder="Book Title" name="Book Title">
+                <input class="add-results" type="text" placeholder="Author" name="Author">
+                <input class="add-results" type="text" placeholder="Genre" name="Genre">
+            </div>
         </div>
-        <div>
-            <form class="add results" action="add results.php" method="post">
-            <input class="add-results" type="text" placeholder="Book Title" name="Book Title">
-            <input class="add-results" type="text" placeholder="Author" name="Author">
-            <input class="add-results" type="text" placeholder="Genre" name="Genre">
-         </div>
-
+        
 
     </body>
 </html>
