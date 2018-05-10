@@ -347,6 +347,7 @@ textarea {
   text-decoration: none;
   color: #cccccc;
   font-family: merriweather;
-  border-bottom: 3px solid #006989;
+  border-bottom: 1px solid #006989;
   font-size: 1em;
+  margin-bottom: 10px;
 }
