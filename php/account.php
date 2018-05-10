@@ -91,6 +91,7 @@
         die( print_r( sqlsrv_errors(), true) );
     }
     $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
+    $password = $row['userPassword'];
     if(!empty($_POST['old-password']) || !empty($_POST['new-password']) || !empty($_POST['confirm-password'])) {
         if(empty($_POST['old-password']) || empty($_POST['new-password']) || empty($_POST['confirm-password'])) {
             echo 'all password fields must be filled out';
