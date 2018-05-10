@@ -37,7 +37,6 @@
         </div>
         <div class="search">
             <ul class="search-results">
-            <li class="search-result"><a class="search-result-link" href="result.php?ISBN=978-0451524935">1984, George Orwell, Science Fiction</a><i class="material-icons">menu</i><div class="hidden-add"><a class="hidden-add-link">add to my library</a></div></li>
 <?php
 	require("common.php");
     $search = $_POST['main-search-bar'];
