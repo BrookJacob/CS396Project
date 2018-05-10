@@ -29,6 +29,9 @@
                 <input class="add-results-input" type="text" placeholder="Book Title" name="Book Title">
                 <input class="add-results-input" type="text" placeholder="Author" name="Author">
                 <input class="add-results-input" type="text" placeholder="Genre" name="Genre">
+                <input class="add-results-input" type="text" placeholder="publisher" name="Publisher">
+                <input class="add-results-input" type="text" placeholder="ISBN10" name="ISBN10">
+                <input class="add-results-input" type="text" placeholder="ISBN13" name="ISBN13>
             </div>
         </div>
         
