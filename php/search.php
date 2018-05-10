@@ -55,9 +55,10 @@
     sqlsrv_close( $conn );
 ?>
             </ul>
+            <div class= "add-results">
+                <a class="add-button-link" href="addresults.php">Don't see what you're looking for?</a>
+            </div>
         </div>
-        <div class= "add-results">
-            <a class="add-button-link" href=".../addresults.php">Don't see what you're looking for?</a>
-        </div>
+       
 </body>
 </html>
