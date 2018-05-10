@@ -360,8 +360,6 @@ textarea {
 }
 .add-results-input{
   top: 20px;
-  width: 40%;
-  height: 40%;
   margin: 5x;
   border-bottom: 3px solid #006989;
   padding: 12px;
@@ -371,7 +369,7 @@ textarea {
   background-color: #333333;
   top: 200px;
   width: 70%;
-  height: 80%;
+  height: 400px;
   margin: 150px auto;
 }
 .add-result h:{
