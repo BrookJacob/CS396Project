@@ -335,13 +335,6 @@ textarea {
   height: 70%;
   margin: auto;
 }
-.add-button-link{
-  text-align: right;
-.account p {
-  width: 50%;
-  text-align: center;
-  font-size: 1.5em;
-}
 .account-details input {
   width: 40%;
   margin-bottom: 10px;
@@ -349,21 +342,16 @@ textarea {
 	border-bottom: 3px solid #006989;
 	font-family: "Merriweather";
 }
-.add-button {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-  height: 50px;
-}
 .add-button-link{
+  float: right;
   text-decoration: none;
   color: #cccccc;
-  font-family: merriweather
+  font-family: merriweather;
+ 
 }
 .add-results{
+  float: right;
   text-decoration: none;
   color: #cccccc;
-  font-family: merriweather
+  font-family: merriweather;
 }
