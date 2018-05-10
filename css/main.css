@@ -375,3 +375,8 @@ textarea {
   margin: 150px auto;
   border-bottom: 3px solid #006989;
 }
+.add-results h:{
+  display: block;
+  text-align: center;
+  font-size: 3em;
+}
