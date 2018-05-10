@@ -100,8 +100,8 @@
         } else if($_POST['new-password'] != $_POST['confirm-password']) {
             echo 'passwords do not match';
         } else {
-            $sql = "UPDATE users SET userPassword = ? WHERE userID = ?"
-            $params = array( &$row['userPassword'], &$userID );
+            $sql = "UPDATE users SET userPassword = ? WHERE userID = ?";
+            $params = array( &$password, &$userID );
             $stmt = sqlsrv_query( $conn, $sql, $params );
             if( $stmt === false ){
                 die( print_r( sqlsrv_errors(), true) );
