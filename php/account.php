@@ -38,7 +38,7 @@
                 <input class="account-input" type="text" placeholder="email" name="email"><br />
                 <input class="account-input" type="text" placeholder="confirm email" name="confirm-email"><br />
                 <p>change your password</p>
-                <input class="account-input" type="password" placeholder="old password" name="old-password"><br />
+                <input class="account-input" type="password" placeholder="current password" name="old-password"><br />
                 <input class="account-input" type="password" placeholder="new password" name="new-password"><br />
                 <input class="account-input" type="password" placeholder="confirm new password" name="confirm-password"><br />
                 <input class="account-input" type="submit" value="update"><br />
