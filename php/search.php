@@ -41,7 +41,7 @@
 <?php
 	require("common.php");
     $search = $_POST['main-search-bar'];
-	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%?%' OR b.author LIKE '%?%' OR b.ISBN13 = '?' OR b.ISBN10 = '?' OR g.genreName LIKE '%?%' AND b.genreID = g.genreID";
+	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE %?% OR b.author LIKE %?% OR b.ISBN13 = ? OR b.ISBN10 = ? OR g.genreName LIKE %?% AND b.genreID = g.genreID";
     $params = array( &$search, &$search, &$search, &$search, &$search );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){
