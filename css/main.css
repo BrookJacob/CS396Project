@@ -354,7 +354,6 @@ textarea {
   font-family: merriweather;
   border-bottom: 1px solid #006989;
   font-size: 1em;
-  margin-bottom: 10px;
 }
 .add-button-link:hover{
   border-color: #cccccc;
@@ -363,6 +362,7 @@ textarea {
   top: 20px;
   width: 50%;
   height: 50%;
+  margin: 5x;
   border-bottom: 3px solid #006989;
   padding: 10px;
   position:relative;
@@ -373,7 +373,6 @@ textarea {
   width: 70%;
   height: 50%;
   margin: 150px auto;
-  border-bottom: 3px solid #006989;
 }
 .add-results h:{
   display: block;
