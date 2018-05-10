@@ -44,6 +44,9 @@
         die("Redirecting to login.php");
     }
 
+
+
+    sqlsrv_close( $conn );
 ?>
     </body>
 </html>
