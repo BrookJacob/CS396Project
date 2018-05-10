@@ -45,7 +45,6 @@
     $params = array( &$likeSearch, &$likeSearch, &$search, &$search, &$likeSearch );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){
-        echo sqlsrv_errors();
         die( print_r( sqlsrv_errors(), true) );
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
