@@ -335,10 +335,8 @@ textarea {
   height: 70%;
   margin: auto;
 }
-<<<<<<< HEAD
 .add-button-link{
   text-align: right;
-=======
 .account p {
   width: 50%;
   text-align: center;
@@ -359,11 +357,13 @@ textarea {
   background-color: #333333;
   height: 50px;
 }
-.add-button-link {
-  display: block;
-  height: 50px;
-  text-align: center;
->>>>>>> 7647b110f4f1c9711794e46f1fa42392507d4179
+.add-button-link{
   text-decoration: none;
   color: #cccccc;
+  font-family: merriweather
+}
+.add-results{
+  text-decoration: none;
+  color: #cccccc;
+  font-family: merriweather
 }
