@@ -109,7 +109,7 @@
         $password = trim($_POST['password']);
         if(empty($_POST['old-password']) || empty($_POST['new-password']) || empty($_POST['confirm-password'])) {
             echo 'all password fields must be filled out';
-        } else if(!password_verify( trim($_POST['password']), $row['userPassword'])) {
+        } else if(!password_verify( trim($_POST['password']), trim($row['userPassword']))) {
             echo 'current password is incorrect';
         } else if($_POST['new-password'] != $_POST['confirm-password']) {
             echo 'passwords do not match';
