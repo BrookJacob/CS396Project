@@ -56,8 +56,8 @@
 ?>
             </ul>
         </div>
-        <div class= "add-button" >
-            <li class="add"><a class="add-button-link" href=...>Don't see what you're looking for?</a></li>
+        <div class= "add-results">
+            <a class="add-button-link" href=".../addresults.php">Don't see what you're looking for?</a>
         </div>
 </body>
 </html>

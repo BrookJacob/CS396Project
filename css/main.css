@@ -335,19 +335,8 @@ left: 270px;
   height: 70%;
   margin: auto;
 }
-.add-button {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-  height: 50px;
-}
-.add-button-link {
-  display: block;
-  height: 50px;
-  text-align: center;
+.add-button-link{
+  text-align: right;
   text-decoration: none;
   color: #cccccc;
-  padding: 14px 16px;
 }
