@@ -74,8 +74,18 @@
         }
     }
     if(!empty($_POST['email'])) {
+        $email = $_POST['email'];
+        $sql = "SELECT 1 FROM users WHERE email = ?";
+        $params = array( &$email );
+        $stmt = sqlsrv_query( $conn, $sql, $params );
+        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
+        if( $stmt === false ){
+            die( print_r( sqlsrv_errors(), true) );
+        }
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !filter_var($_POST['confirm-email'], FILTER_VALIDATE_EMAIL)){
             echo 'not a valid email address';
+        } else if( $row ) {
+            echo 'username is already in use';
         } else if($_POST['email'] != $_POST['confirm-email']) {
             $email = $_POST['email'];
             $sql = "UPDATE users SET lastName = ? WHERE userID = ?";
