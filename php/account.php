@@ -101,7 +101,8 @@
             echo 'passwords do not match';
         } else {
             $sql = "UPDATE users SET userPassword = ? WHERE userID = ?";
-            $params = array( &$password, &$userID );
+            $passwordHash = password_hash( $password, PASSWORD_DEFAULT);
+            $params = array( &$passwordHash, &$userID );
             $stmt = sqlsrv_query( $conn, $sql, $params );
             if( $stmt === false ){
                 die( print_r( sqlsrv_errors(), true) );
