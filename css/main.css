@@ -360,21 +360,21 @@ textarea {
 }
 .add-results-input{
   top: 20px;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   margin: 5x;
   border-bottom: 3px solid #006989;
-  padding: 10px;
+  padding: 12px;
   position:relative;
 }
-.add-results{
+.add-result{
   background-color: #333333;
   top: 200px;
   width: 70%;
   height: 50%;
   margin: 150px auto;
 }
-.add-results h:{
+.add-result h:{
   display: block;
   text-align: center;
   font-size: 3em;
