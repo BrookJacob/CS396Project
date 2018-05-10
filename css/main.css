@@ -360,7 +360,7 @@ textarea {
 }
 .add-results-input{
   top: 20px;
-  margin: 5x;
+  margin-left: 10px;
   border-bottom: 3px solid #006989;
   padding: 8px;
   position:relative;
@@ -376,4 +376,9 @@ textarea {
   display: block;
   text-align: center;
   font-size: 3em;
+}
+.add-results-input-submit{
+  padding: 6px 16px;
+	background-color: #006989;
+	font-family: "Merriweather";
 }
