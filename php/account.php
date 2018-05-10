@@ -73,9 +73,9 @@
     }
     if(!empty($_POST['email'])) {
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-            $email = $_POST['email'];
-        } else {
             echo 'not a valid email address';
+        } else {
+            $email = $_POST['email'];
         }
         $sql = "UPDATE users SET lastName = ? WHERE userID = ?";
         $params = array( &$lastName, &$userID);
