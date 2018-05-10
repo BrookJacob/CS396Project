@@ -52,7 +52,7 @@
         header("Location: login.php");
         die("Redirecting to login.php");
     }
-    $userID = $_SESSION['userID'];
+    $userID = $_SESSION['user']['userID'];
     if(!empty($_POST['firstName'])) {
         $firstName = $_POST['firstName'];
         $sql = "UPDATE users SET firstName = ? WHERE userID = ?";
