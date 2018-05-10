@@ -31,10 +31,10 @@
         <div class="splash"></div>
         <div class="account">
             <form class="account-details" method="post">
-                <p>name: </p><?php echo $_SESSION['user']['firstName']." ".$_SESSION['user']['lastName']; ?> 
+                <p>name: <?php echo $_SESSION['user']['firstName']." ".$_SESSION['user']['lastName']; ?></p> 
                 <input class="account-input" type="text" placeholder="first name" name="firstName"><br />
                 <input class="account-input" type="text" placeholder="last name" name="lastName"><br />
-                <p>email: </p><?php echo $_SESSION['user']['email']; ?>
+                <p>email: <?php echo $_SESSION['user']['email']; ?></p>
                 <input class="account-input" type="text" placeholder="email" name="email"><br />
                 <p>change your password</p>
                 <input class="account-input" type="text" placeholder="old password" name="old-password"><br />
