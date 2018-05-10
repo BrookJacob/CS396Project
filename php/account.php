@@ -89,7 +89,7 @@
         } else if($_POST['email'] == $_POST['confirm-email']) {
             $email = $_POST['email'];
             $sql = "UPDATE users SET email = ? WHERE userID = ?";
-            $params = array( &$lastName, &$userID);
+            $params = array( &$email, &$userID);
             $stmt = sqlsrv_query( $conn, $sql, $params);
             if( $stmt === false ){
                 die( print_r( sqlsrv_errors(), true) );
