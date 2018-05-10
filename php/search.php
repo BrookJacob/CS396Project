@@ -41,7 +41,7 @@
 <?php
 	require("common.php");
     $search = $_POST['main-search-bar'];
-	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE '%".$search."%' OR b.author LIKE '%".$search."%' OR b.ISBN13 = '".$search."' OR b.ISBN10 = '".$search."' OR g.genreName LIKE '%".$search."%' AND b.genreID = g.genreID";
+	$sql = "SELECT b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE CONCAT('%',?,'%') OR b.author LIKE CONCAT('%',?,'%') OR b.ISBN13 = ? OR b.ISBN10 = ? OR g.genreName LIKE CONCAT('%',?,'%') AND b.genreID = g.genreID";
     $params = array( &$search, &$search, &$search, &$search, &$search );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){

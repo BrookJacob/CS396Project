@@ -43,17 +43,14 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = '".$username."'";
+        $sql = "SELECT userID, firstName, lastName, email, userPassword FROM users WHERE username = ?";
         $params = array( &$username );
         $stmt = sqlsrv_query( $conn, $sql, $params );
         echo sqlsrv_errors();
         if( $stmt === false) {
-            echo "you buffon";
             die( print_r( sqlsrv_errors(), true) );
         }
         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
-        echo $row['username'];
-        echo "this sucks";
         $hash = $row['userPassword'];
         
         if(password_verify( $password, $hash )){

@@ -29,17 +29,18 @@
             </ul>
         </div>
         <div class="splash"></div>
-        
         <div class="account">
             <form class="account-details" method="post">
-                <input class="account-input" type="text" placeholder="first name" name="firstName">
-                <input class="account-input" type="text" placeholder="last name" name="lastName">
-                <input class="account-input" type="text" placeholder="email" name="email">
-                <input class="account-input" type="text" placeholder="old password" name="old-password">
-                <input class="account-input" type="text" placeholder="new password" name="new-password">
-                <input class="account-input" type="text" placeholder="confirm new password" name="confirm-password">
-                <input class="account-input" type="submit" value="update">
-                <input class="account-input" type="submit" value="delete your account">
+                <p>name: </p><?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?> 
+                <input class="account-input" type="text" placeholder="first name" name="firstName"><br />
+                <input class="account-input" type="text" placeholder="last name" name="lastName"><br />
+                <p>email: </p><?php echo $_SESSION['email']; ?>
+                <input class="account-input" type="text" placeholder="email" name="email"><br />
+                <p>change your password</p>
+                <input class="account-input" type="text" placeholder="old password" name="old-password"><br />
+                <input class="account-input" type="text" placeholder="new password" name="new-password"><br />
+                <input class="account-input" type="text" placeholder="confirm new password" name="confirm-password"><br />
+                <input class="account-input" type="submit" value="update"><br />
             </form>
 
         </div>
@@ -50,6 +51,18 @@
     if(empty($_SESSION['user'])){
         header("Location: login.php");
         die("Redirecting to login.php");
+    }
+    if(!empty($_POST['firstName'])) {
+        $sql
+    }
+    if(!empty($_POST['lastName'])) {
+
+    }
+    if(!empty($_POST['email'])) {
+
+    }
+    if(!empty($_POST['old-password']) || !empty($_POST['new-password']) || !empty($_POST['confirm-password'])) {
+
     }
     
 
