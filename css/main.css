@@ -359,18 +359,19 @@ textarea {
   border-color: #cccccc;
 }
 .add-results-input{
-  top: 20px;
-  margin-left: 10px;
+  top: 30px;
+  margin-left: 15px;
   border-bottom: 3px solid #006989;
-  padding: 8px;
+  padding: 5px;
   position:relative;
 }
 .add-result{
   background-color: #333333;
   top: 200px;
   width: 70%;
-  height: 400px;
+  height: 450px;
   margin: 150px auto;
+  border-bottom: #006986
 }
 .add-result h:{
   display: block;
