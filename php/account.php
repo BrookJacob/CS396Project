@@ -36,6 +36,7 @@
                 <input class="account-input" type="text" placeholder="last name" name="lastName"><br />
                 <p>email: <?php echo $_SESSION['user']['email']; ?></p>
                 <input class="account-input" type="text" placeholder="email" name="email"><br />
+                <input class="account-input" type="text" placeholder="confirm email" name="confirm-email"><br />
                 <p>change your password</p>
                 <input class="account-input" type="text" placeholder="old password" name="old-password"><br />
                 <input class="account-input" type="text" placeholder="new password" name="new-password"><br />
@@ -72,16 +73,16 @@
         }
     }
     if(!empty($_POST['email'])) {
-        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !filter_var($_POST['confirm-email'], FILTER_VALIDATE_EMAIL)){
             echo 'not a valid email address';
-        } else {
+        } else if($_POST['email'] != $_POST['confirm-email']) {
             $email = $_POST['email'];
-        }
-        $sql = "UPDATE users SET lastName = ? WHERE userID = ?";
-        $params = array( &$lastName, &$userID);
-        $stmt = sqlsrv_query( $conn, $sql, $params);
-        if( $stmt === false ){
-            die( print_r( sqlsrv_errors(), true) );
+            $sql = "UPDATE users SET lastName = ? WHERE userID = ?";
+            $params = array( &$lastName, &$userID);
+            $stmt = sqlsrv_query( $conn, $sql, $params);
+            if( $stmt === false ){
+                die( print_r( sqlsrv_errors(), true) );
+            }
         }
     }
     $sql = "SELECT userPassword FROM users WHERE userID = ?";
