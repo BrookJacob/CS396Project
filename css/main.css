@@ -333,6 +333,7 @@ textarea {
   margin: 10px auto;
 }
 .add-results p{
+  position: absolute;
   bottom: 0px;
   left: 0px;
 
