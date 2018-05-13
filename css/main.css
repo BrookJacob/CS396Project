@@ -334,13 +334,12 @@ textarea {
 }
 .add-results p{
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: 10px;
+  left: 10px;
 
 }
 .add-button-link{
   text-decoration: none;
-  position: absolute;
   color: #cccccc;
   font-family: "Merriweather";
   border-bottom: 1px solid #006989;
