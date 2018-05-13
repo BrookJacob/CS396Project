@@ -324,12 +324,12 @@ textarea {
 	border-bottom: 3px solid #006989;
 	font-family: "Merriweather";
 }
-.add-results p{
+.add-results{
   background-color: #333333;
   position: relative;
   top: 200px;
   width: 100%;
-  height: 450px;
+  height: 100%;
   margin: 10px auto;
 }
 .add-button-link{
