@@ -78,9 +78,6 @@ body {
 	width: 100%;
 	height: 100%;
 }
-.search{
-	overflow: hidden;
-}
 .main-search-bar {
 	margin:auto;
 	height:50px;
@@ -94,15 +91,6 @@ body {
   position: absolute;
   top: 75px;
   width: 100%;
-}
-.result-search-bar {
-  position: absolute;
-  top: 75px;
-  width: 100%;
-}
-.live-results {
-  width: 500px;
-  background-color: white;
 }
 .about {
   background-color: #333333;
@@ -348,25 +336,21 @@ textarea {
 .add-button-link:hover{
   border-color: #cccccc;
 }
-.add-results-input{
-  top: 30px;
-  margin-left: 15px;
-  border-bottom: 3px solid #006989;
-  padding: 5px, 10px;
-  position:relative;
-}
 .add-results{
   background-color: #333333;
+  position: relative;
   top: 200px;
   width: 70%;
   height: 450px;
   margin: 150px auto;
   border-bottom: #006986
 }
-.add-result h{
-  display: block;
-  text-align: center;
-  font-size: 3em;
+.add-results-input{
+  top: 30px;
+  margin-left: 15px;
+  border-bottom: 3px solid #006989;
+  padding: 5px, 10px;
+  position:relative;
 }
 .add-results-input-submit{
   padding: 6px 16px;
