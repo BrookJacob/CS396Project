@@ -328,7 +328,7 @@ textarea {
   text-decoration: none;
   position: absolute;
   color: #cccccc;
-  bottom: 10px;
+  bottom: 40px;
   left: 10px;
   font-family: "Merriweather";
   border-bottom: 1px solid #006989;
@@ -342,8 +342,7 @@ textarea {
   top: 200px;
   width: 70%;
   height: 450px;
-  margin: 150px auto;
-  border-bottom: #006986
+  margin: 10px auto;
 }
 .add-results-input{
   top: 30px;
