@@ -54,7 +54,7 @@
     sqlsrv_close( $conn );
 ?>
             <div class= "add-results">
-                <a class="add-button-link" href="addresults.php">Don't see what you're looking for?</a>
+                <p>don't see what you're looking for?<a class="add-button-link" href="advancedSearch.php"> advanced search</a> or <a class="add-button-link" href="addResults.php">add a book to the database</a></p>
             </div>
             </ul>
         </div>
