@@ -327,10 +327,8 @@ textarea {
 .add-results{
   background-color: #333333;
   position: relative;
-  top: 200px;
   width: 100%;
   height: 100%;
-  margin: 10px auto;
 }
 .add-results p{
   position: absolute;
