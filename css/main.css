@@ -350,9 +350,10 @@ textarea {
 .add-button-link{
   text-decoration: none;
   color: #cccccc;
-  font-family: merriweather;
+  bottom: 10px;
+  left: 10px;
+  font-family: "Merriweather";
   border-bottom: 1px solid #006989;
-  font-size: 1em;
 }
 .add-button-link:hover{
   border-color: #cccccc;
