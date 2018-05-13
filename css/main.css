@@ -324,37 +324,3 @@ textarea {
 	border-bottom: 3px solid #006989;
 	font-family: "Merriweather";
 }
-.add-results{
-  background-color: #333333;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 10px auto;
-}
-.add-results p{
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-
-}
-.add-button-link{
-  text-decoration: none;
-  color: #cccccc;
-  font-family: "Merriweather";
-  border-bottom: 1px solid #006989;
-}
-.add-button-link:hover{
-  border-color: #cccccc;
-}
-.add-results-input{
-  top: 30px;
-  margin-left: 15px;
-  border-bottom: 3px solid #006989;
-  padding: 5px, 10px;
-  position:relative;
-}
-.add-results-input-submit{
-  padding: 6px 16px;
-	background-color: #006989;
-	font-family: "Merriweather";
-}
