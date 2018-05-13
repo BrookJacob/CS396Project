@@ -25,7 +25,7 @@
                 ?>
             </ul>
             <div class="add-result">
-                <form class="add-results" action="addresults.php" method="post">
+                <form class="add-results" action="addResults.php" method="post">
                 <input class="add-results-input" type="text" placeholder="Book Title" name="Book Title">
                 <input class="add-results-input" type="text" placeholder="Author" name="Author">
                 <input class="add-results-input" type="text" placeholder="Genre" name="Genre"><br>
