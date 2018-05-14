@@ -47,12 +47,12 @@
         die( print_r( sqlsrv_errors(), true) );
     }
 	while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-		echo '<li class="search-result"><a class="search-result-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a><a href="  "><i class="material-icons">menu</i></a><div class="hidden-add"><a class="hidden-add-link">add to my library</a></div></li>';
+		echo '<li class="search-result"><a class="search-result-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a><i class="material-icons">menu</i></li>';
     }
     
     sqlsrv_close( $conn );
 ?>
-                <li class="addBooks"><p>can't find what you're looking for?</p><a href="advancedSearch.php">advanced search</a> or <a href="addBooks.php">add a book</a><li>
+                <li class="addBooks"><p>can't find what you're looking for?</p><a class="search-more-options" href="advancedSearch.php">advanced search</a> or <a class="search-more-options" href="addBooks.php">add a book</a><li>
             </ul>
         </div>
        
