@@ -326,8 +326,6 @@ textarea {
 	font-family: "Merriweather";
 }
 .addBooks {
-  position: absolute;
-  width: 50%;
-  margin: auto;
-  
+  text-align: center;
+  font-family: "Merriweather";
 }
