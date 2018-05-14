@@ -11,7 +11,7 @@
     <body class="splash">
         <div class="menu-bar">
             <ul class="menu-buttons">
-            <li class="menu-button"><a class="menu-button-link" href="../index.php">library books</a></li>
+                <li class="menu-button"><a class="menu-button-link" href="../index.php">library books</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="../index.php#about">about</a></li>
                 <li class="menu-button"><a class="menu-button-link" href="../index.php#feedback">feedback</a></li>
                 <?php
@@ -27,7 +27,8 @@
                 }
                 ?>
             </ul>
-            <div class="add-result">
+        </div>
+        <div class="add-result">
                 <form class="add-results" action="addResults.php" method="post">
                 <input class="add-results-input" type="text" placeholder="Book Title" name="title">
                 <input class="add-results-input" type="text" placeholder="Author" name="author">
@@ -37,7 +38,6 @@
                 <input class="add-results-input" type="text" placeholder="ISBN13" name="ISBN13"><br>
                 <input class="add-results-input submit" type="submit">
             </div>
-        </div>
         <?php
                 require("common.php");
 
