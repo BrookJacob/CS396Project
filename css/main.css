@@ -156,6 +156,7 @@ textarea {
   border-bottom: 2px solid #006989;
 }
 .search-results {
+  position: relative;
   height: 100%;
   margin: 150px 100px 0px 100px;
   padding: 20px;
@@ -323,4 +324,8 @@ textarea {
   margin-left: 10px;
 	border-bottom: 3px solid #006989;
 	font-family: "Merriweather";
+}
+.addBooks {
+  position: absolute;
+
 }
