@@ -43,18 +43,32 @@
 
                 if(!empty($_POST['Book Title']) && !empty($_POST['Author']) && !empty($_POST['Genre']) && !empty($_POST['Publisher']) && !empty($_POST['ISBN10'] && $_POST['ISBN13'])) {
                     $genreName = $_POST['genre'];
-                    $sql = "INSERT INTO genres (genreName) VAlUES (?)";
-                    $params = array( &$genreName );
-                    $stmt = sqlsrv_query( $conn, $sql, $parms );
+
+                    $sql = "SELECT 1 FROM genres WHERE genreName = ?";
+                    $params = array( &$genreName);
+                    $stmt = sqlsrv_query( $conn, $sql, $params);
                     if( $stmt === false ){
                         die( print_r( sqlsrv_errors(), true) );
                     }
-                    $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
+                    if ($stmt === true) {
+                        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
+                        $genreID = $row['genreID'];
+                    } else {
+                        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
+                        $sql = "INSERT INTO genres (genreName) VAlUES (?)";
+                        $params = array( &$genreName );
+                        $stmt = sqlsrv_query( $conn, $sql, $parms );
+                        if( $stmt === false ){
+                            die( print_r( sqlsrv_errors(), true) );
+                        }
+                    }
+
+                    
+                    
                     $ISBN10 = $_POST['ISBN10'];
                     $ISBN13 = $_POST['ISBN13'];
                     $author = $_POST['author'];
                     $title = $_POST['title'];
-                    $genreID = $row['genreID'];
                     $publisher = $_POST['publisher'];
                     $sql = "INSERT INTO books ( ISBN10, ISBN13, author, title, genreID, publisher ) VALUES ( ?, ?, ?, ?, ?, ? )";
                     $params = array( &$ISBN10, &$ISBN13, &$author, &$title, &$genreID, &$publisher );
