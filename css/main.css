@@ -189,23 +189,6 @@ textarea {
   right: 0px;
   top: 0px;
 }
-.hidden-add {
-  display: none;
-  position: relative;
-  left: 360px;
-  top: 25px;
-}
-.hidden-add-link {
-  display: none;
-}.hidden-add {
-  display: none;
-  position: relative;
-  left: 360px;
-  top: 25px;
-}
-.hidden-add-link {
-  display: none;
-}
 .signup {
   background-color: #333333;
   top: 200px;
@@ -328,4 +311,8 @@ textarea {
 .addBooks {
   text-align: center;
   font-family: "Merriweather";
+}
+.search-more-options {
+  text-decoration: none;
+  border-bottom: 1px solid #006989;
 }
