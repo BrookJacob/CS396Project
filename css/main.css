@@ -314,5 +314,9 @@ textarea {
 }
 .search-more-options {
   text-decoration: none;
+  color: #cccccc;
   border-bottom: 1px solid #006989;
+}
+.search-more-options:hover {
+  border-color: #cccccc;
 }
