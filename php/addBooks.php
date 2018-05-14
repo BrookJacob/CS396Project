@@ -36,7 +36,7 @@
                 <input class="add-results-input" type="text" placeholder="publisher" name="publisher">
                 <input class="add-results-input" type="text" placeholder="ISBN10" name="ISBN10">
                 <input class="add-results-input" type="text" placeholder="ISBN13" name="ISBN13"><br>
-                <input class="add-results-input submit" type="submit">
+                <input class="add-results-input submit" type="submit" action="addBook()">
             </div>
         <?php
                 require("common.php");
