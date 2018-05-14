@@ -327,6 +327,7 @@ textarea {
 }
 .addBooks {
   position: absolute;
-  width: 100%;
-  bottom: 100px;
+  width: 50%;
+  margin: auto;
+  
 }
