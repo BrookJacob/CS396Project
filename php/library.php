@@ -43,7 +43,7 @@
         die("Redirecting to login.php");
     }
     $userID = $_SESSION['user']['userID'];
-    $sql = "SELECT b.ISBN10, b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres AS g, library AS l WHERE l.userID = ? AND b.genreID = g.genreID";
+    $sql = "SELECT b.ISBN10, b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres AS g, userlibrary AS l WHERE g.genreID = b.genreID AND l.ISBN13 = b.ISBN13 AND l.userID = ?";
     $params = array( &$userID );
     $stmt = sqlsdrv_query( $conn, $sql, $params );
     if( $stmt === false ){
