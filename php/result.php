@@ -51,7 +51,7 @@
                 
                 if (!empty($_SESSION['user'])){
                     $userID = $_SESSION['user']['userID'];
-                    $sql = "SELECT * FROM userlibrary AS l WHERE l.userID = ? AND b.ISBN13 = ?";
+                    $sql = "SELECT * FROM userlibrary AS l WHERE l.userID = ? AND l.ISBN13 = ?";
                     $params = array( &$userID, &$ISBN13 );
                     $stmt = sqlsrv_query( $conn, $sql, $params);
                     if( $stmt === false ){
