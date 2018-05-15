@@ -83,7 +83,6 @@
                     } else {
                         echo 'all fields are required';
                     }
-                }
         ?>
     </body>
 </html>
