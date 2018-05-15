@@ -29,7 +29,7 @@
             </ul>
         </div>
         <div class="add-result">
-            <form class="add-results" action="addBooks()" method="post">
+            <form class="add-results" action="addBooks.php" method="post">
                 <input class="add-results-input" type="text" placeholder="Book Title" name="title">
                 <input class="add-results-input" type="text" placeholder="Author" name="author">
                 <input class="add-results-input" type="text" placeholder="Genre" name="genre"><br>
@@ -44,6 +44,9 @@
 
                 function addBooks() {
                     echo 'hello';
+                }
+                if(isset($_POST['submit'])) {
+                    addBooks();
                 }
         ?>
     </body>
