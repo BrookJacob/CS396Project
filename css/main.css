@@ -176,13 +176,6 @@ textarea {
   color: #006989;
   border-color: #cccccc;
 }
-.material-icons {
-  color: #cccccc;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  cursor: pointer;
-}
 .signup {
   background-color: #333333;
   top: 200px;
@@ -343,11 +336,29 @@ textarea {
 }
 .my-library {
   background-color: #333333;
-  top: 200px;
   width: 70%;
   height: 70%;
   margin: 150px auto;
   border-bottom: 3px solid #006989;
   padding: 10px;
   position:relative;
+}
+.library-book {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 2px;
+  border-width: 0px 0px 1px 0px;
+  border-color: #006989;
+  border-style: solid;
+}
+.library-book:hover {
+  border-color: #cccccc;
+}
+.library-book-link {
+  color: #cccccc;
+  text-decoration: none;
+}
+.library-book-link:hover + .library-book{
+  color: #006989;
+  border-color: #cccccc;
 }
