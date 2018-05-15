@@ -251,42 +251,42 @@ textarea {
   left:250px;
   font-size: 4em;
   color: #006989;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
   font-family: "Merriweather";
   position: absolute;
 }
 .book-author{
   font-size: 1.5em;
   font-family: "Merriweather";
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   position: absolute;
   left: 270px;
 }
 .book-publisher{
   font-size: 1.5em;
   font-family: "Merriweather";
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   position: absolute;
   left: 270px;
   }
 .book-genre{
   font-size: 1.5em;
   font-family: "Merriweather";
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   position: absolute;
   left: 270px;
 }
 .book-ISBN10{
   font-size: 1.5em;
   font-family: "Merriweather";
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   position: absolute;
   left: 270px;
 }
 .book-ISBN13{
   font-size: 1.5em;
   font-family: "Merriweather";
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   position: absolute;
   left: 270px;
 }
@@ -340,8 +340,8 @@ textarea {
 }
 .add-to-library {
   position: absolute;
-  width: 100px;
-  height: 70px;
+  width: 130px;
+  height: 50px;
   right: 10px;
   margin: auto;
   background-color: #006989;
@@ -353,4 +353,5 @@ textarea {
 .add-to-library a {
   text-decoration: none;
   color: #cccccc;
+  text-align: center;
 }
