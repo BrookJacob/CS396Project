@@ -188,6 +188,7 @@ textarea {
   position: absolute;
   right: 0px;
   top: 0px;
+  cursor: pointer;
 }
 .signup {
   background-color: #333333;

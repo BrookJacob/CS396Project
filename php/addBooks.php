@@ -91,8 +91,8 @@
                     $params = array( &$ISBN10, &$ISBN13, &$author, &$title, &$genreID, &$publisher );
                     $stmt = sqlsrv_query( $GLOBALS['conn'], $sql, $params );
                     
-                    header("Location: search.php#result?q=".$ISBN13."");
-                    die("Redirecting to: search.php#result?q=".$ISBN13."");
+                    header("Location: search.php");
+                    die("Redirecting to: search.php");
                 }
             }
         }

@@ -41,6 +41,16 @@
         header("Location: login.php");
         die("Redirecting to login.php");
     }
+    $userID = $_SESSION['user']['userID'];
+    $sql = "SELECT b.ISBN10, b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres AS g, library AS l WHERE l.userID = ? AND b.genreID = g.genreID";
+    $params = array( &$userID );
+    $stmt = sqlsdrv_query( $conn, $sql, $params );
+    if( $stmt === false ){
+        die( print_r( sqlsrv_errors(), true) );
+    }
+    while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+            echo '<li class="search-result"><a class="search-result-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a><i class="material-icons">menu</i></li>';
+    }
 
 
 
