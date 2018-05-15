@@ -62,10 +62,12 @@
                         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
                         if($row) {
                             $genreID = $row['genreID'];
+                            echo 'its me';
                             $sql = "INSERT INTO books ( ISBN10, ISBN13, author, title, genreID, publisher ) VALUES ( ?, ?, ?, ?, ?, ? )";
                             $params = array( &$ISBN10, &$ISBN13, &$author, &$title, &$genreID, &$publisher );
                             $stmt = sqlsrv_query( $conn, $sql, $params );
                         } else {
+                            echo 'im in here';
                             $sql = "INSERT INTO genres ( genreName ) VALUES ( ? ); SELECT genreID FROM genres WHERE genreName = ?";
                             $params = array( &$genre, &$genre );
                             $stmt = sqlsrv_query( $conn, $sql, $params );
