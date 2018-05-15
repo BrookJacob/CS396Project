@@ -331,3 +331,11 @@ textarea {
   background-color: #006989;
   border: 3px solid #006989;
 }
+.add-to-library:hover {
+  background-color: #006989;
+}
+.add-to-library a {
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+}
