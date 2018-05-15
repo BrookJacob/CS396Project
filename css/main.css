@@ -339,8 +339,11 @@ textarea {
 .add-to-library a {
   display: block;
   height: 50px;
-  padding: 0 5px;
+  padding: 3px 5px;
   text-align: center;
   text-decoration: none;
   color: #cccccc;
+}
+.add-to-library:hover a {
+  color: #006989;
 }
