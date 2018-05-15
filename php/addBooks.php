@@ -55,6 +55,7 @@
 
                         $sql = "SELECT * FROM genres AS g WHERE g.genreName = ?";
                         echo 'i get this far';
+                        echo $genre;
                         $params = array( &$genre );
                         $stmt = sqlsrv_query( $conn, $sql, $params );
                         if( $stmt === false ) {
