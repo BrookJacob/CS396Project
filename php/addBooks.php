@@ -30,9 +30,9 @@
         </div>
         <div class="add-result">
             <form class="add-results" action="addBooks.php" method="post">
-                <input class="add-results-input" type="text" placeholder="Book Title" name="title">
-                <input class="add-results-input" type="text" placeholder="Author" name="author">
-                <input class="add-results-input" type="text" placeholder="Genre" name="genre"><br>
+                <input class="add-results-input" type="text" placeholder="book title" name="title">
+                <input class="add-results-input" type="text" placeholder="author" name="author">
+                <input class="add-results-input" type="text" placeholder="genre" name="genre"><br>
                 <input class="add-results-input" type="text" placeholder="publisher" name="publisher">
                 <input class="add-results-input" type="text" placeholder="ISBN10" name="ISBN10">
                 <input class="add-results-input" type="text" placeholder="ISBN13" name="ISBN13"><br>
@@ -43,7 +43,42 @@
                 require("common.php");
 
                 function addBooks() {
-                    echo 'hello';
+                    if(empty($_POST['title']) && empty($_POST['author']) && empty($_POST['genre']) && empty($_POST['publisher']) && empty($_POST['ISBN10']) && empty($_POST['ISBN13'])) {
+                        echo 'all fields are required';
+                    } else {
+                        $title = $_POST['title'];
+                        $author = $_POST['author'];
+                        $genre = $_POST['genre'];
+                        $publisher = $_POST['publisher'];
+                        $ISBN10 = $_POST['ISBN10'];
+                        $ISBN13 = $_POST['ISBN13'];
+
+                        $sql = "SELECT * FROM genres WHERE genreName = ?";
+                        $params = array( &$genre );
+                        $stmt = sqlsrv_query( $conn, $sql, $params );
+                        if( $stmt === false ) {
+                            die( print_r( sqlsrv_errors(), true) );
+                        }
+                        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
+                        if($row) {
+                            $genreID = $row['genreID'];
+                            $sql = "INSERT INTO books ( ISBN10, ISBN13, author, title, genreID, publisher ) VALUES ( ?, ?, ?, ?, ?, ? )";
+                            $params = array( &$ISBN10, &$ISBN13, &$author, &$title, &$genreID, &$publisher );
+                            $stmt = sqlsrv_query( $conn, $sql, $params );
+                        } else {
+                            $sql = "INSERT INTO genres ( genreName ) VALUES ( ? ); SELECT genreID FROM genres WHERE genreName = ?";
+                            $params = array( &$genre, &$genre );
+                            $stmt = sqlsrv_query( $conn, $sql, $params );
+                            if( $stmt === false ) {
+                                die( print_r( sqlsrv_errors(), true) );
+                            }
+                            $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
+                            $genreID = $row['genreID'];
+                            $sql = "INSERT INTO books ( ISBN10, ISBN13, author, title, genreID, publisher ) VALUES ( ?, ?, ?, ?, ?, ? )";
+                            $params = array( &$ISBN10, &$ISBN13, &$author, &$title, &$genreID, &$publisher );
+                            $stmt = sqlsrv_query( $conn, $sql, $params );
+                        }
+                    }
                 }
                 if(isset($_POST['submit'])) {
                     addBooks();
