@@ -51,6 +51,7 @@
                 
                 sqlsrv_close( $conn );
             ?>
+            <div class="add-to-library">add to my library</div>
         </div>
     </body>
 </html>
