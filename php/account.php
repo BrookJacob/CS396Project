@@ -37,10 +37,6 @@
                 <p>email: <?php echo $_SESSION['user']['email']; ?></p>
                 <input class="account-input" type="text" placeholder="email" name="email"><br />
                 <input class="account-input" type="text" placeholder="confirm email" name="confirm-email"><br />
-                <p>change your password</p>
-                <input class="account-input" type="password" placeholder="current password" name="old-password"><br />
-                <input class="account-input" type="password" placeholder="new password" name="new-password"><br />
-                <input class="account-input" type="password" placeholder="confirm new password" name="confirm-password"><br />
                 <input class="account-input" type="submit" value="update"><br />
             </form>
 
@@ -96,34 +92,6 @@
         $stmt = sqlsrv_query( $conn, $sql, $params);
         if( $stmt === false ){
             die( print_r( sqlsrv_errors(), true) );
-        }
-    }
-    if(!empty($_POST['old-password']) || !empty($_POST['new-password']) || !empty($_POST['confirm-password'])) {
-        $sql = "SELECT userPassword FROM users WHERE userID = ?";
-        $params = array( &$userID );
-        $stmt = sqlsrv_query( $conn, $sql, $params );
-        if( $stmt === false ){
-            die( print_r( sqlsrv_errors(), true) );
-        }
-        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
-        $password = trim($_POST['password']);
-        $hash = trim($row['userPassword']);
-        echo $hash;
-        if(empty($_POST['old-password']) || empty($_POST['new-password']) || empty($_POST['confirm-password'])) {
-            echo 'all password fields must be filled out';
-        } else if(!password_verify( $password, $hash )) {
-            echo 'current password is incorrect';
-        } else if($_POST['new-password'] != $_POST['confirm-password']) {
-            echo 'passwords do not match';
-        } else {
-            $sql = "UPDATE users SET userPassword = ? WHERE userID = ?";
-            $passwordHash = password_hash( $password, PASSWORD_DEFAULT);
-            $params = array( &$passwordHash, &$userID );
-            $stmt = sqlsrv_query( $conn, $sql, $params );
-            if( $stmt === false ){
-                die( print_r( sqlsrv_errors(), true) );
-            }
-            unset($row['userPassword']);
         }
     }
     
