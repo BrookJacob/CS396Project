@@ -337,3 +337,8 @@ textarea {
   border-bottom: 3px solid #006989;
   font-family: "Merriweather";
 }
+.add-to-library {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}

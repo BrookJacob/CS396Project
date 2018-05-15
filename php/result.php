@@ -51,7 +51,7 @@
                 
                 sqlsrv_close( $conn );
             ?>
-            <div class="add-to-library">add to my library</div>
+            <div class="add-to-library" onclick="addToLibrary()"><a href="addToLibrary.php">add to my library</a></div>
         </div>
     </body>
 </html>
