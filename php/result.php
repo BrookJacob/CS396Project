@@ -49,7 +49,6 @@
                 $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
                 echo '<div class="book-title">'.$row['title'].'</div><br /><div class="book-author">'.$row['author'].'</div><br /><div class="book-genre">'.$row['genreName'].'</div><br /><div class="book-ISBN10">'.$row['ISBN10'].'</div><br /><div class="book-ISBN13">'.$row['ISBN13'].'</div><br /><div class="book-publisher">'.$row['publisher'].'</div>';
                 
-                sqlsrv_close( $conn );
                 if (!empty($_SESSION['user'])){
                     $userID = $_SESSION['user']['userID'];
                     $sql = "SELECT * FROM userlibrary AS l WHERE l.userID = ? AND b.ISBN13 = ?";
@@ -65,6 +64,7 @@
                         echo '<div class="add-to-library"><a href="addToLibrary.php?q='.$ISBN13.'">add to my library</a></div>';
                     }
                 }
+                sqlsrv_close( $conn );
             ?>
             
         </div>
