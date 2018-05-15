@@ -50,8 +50,19 @@
                 echo '<div class="book-title">'.$row['title'].'</div><br /><div class="book-author">'.$row['author'].'</div><br /><div class="book-genre">'.$row['genreName'].'</div><br /><div class="book-ISBN10">'.$row['ISBN10'].'</div><br /><div class="book-ISBN13">'.$row['ISBN13'].'</div><br /><div class="book-publisher">'.$row['publisher'].'</div>';
                 
                 sqlsrv_close( $conn );
+
+                function addToLibrary() {
+                    $userID = $_SESSION['user']['userID'];
+                    $ISBN13 = $_GET['ISBN13'];
+                    $sql = "INSERT INTO library ( userID, ISBN13 ) VALUES ( ?, ? )";
+                    $params = array( &$userID, &$ISBN13 );
+                    $stmt = sqlsrv_query( $GLOBALS['conn'], $sql, $params );
+                    if( $stmt === false ){
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                }
             ?>
-            <div class="add-to-library"><a href="addToLibrary.php">add to my library</a></div>
+            <div class="add-to-library"><a href="addToLibrary()">add to my library</a></div>
         </div>
     </body>
 </html>
