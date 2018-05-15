@@ -56,13 +56,13 @@
                         $sql = "SELECT * FROM genres AS g WHERE g.genreName = ?";
                         echo 'i get this far';
                         echo $genre;
+                        echo $conn;
                         $params = array( &$genre );
                         $stmt = sqlsrv_query( $conn, $sql, $params );
                         if( $stmt === false ) {
                             die( print_r( sqlsrv_errors(), true) );
                         }
                         $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
-                        echo 'i actually get this far';
                         if($row) {
                             $genreID = $row['genreID'];
                             echo 'its me';
