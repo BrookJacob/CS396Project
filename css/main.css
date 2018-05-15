@@ -148,7 +148,7 @@ body {
  display: block;
  margin: auto;
  padding: 6px 10px;
- border-bottom: 3px solid #006986;
+ border-bottom: 3px solid #006989;
 }
 textarea {
   resize: vertical;
@@ -251,43 +251,43 @@ textarea {
   left:250px;
   font-size: 4em;
   color: #006989;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-family: "Merriweather";
   position: absolute;
 }
 .book-author{
   font-size: 1.5em;
   font-family: "Merriweather";
+  margin-bottom: 10px;
   position: absolute;
-  top: 110px;
   left: 270px;
 }
 .book-publisher{
   font-size: 1.5em;
   font-family: "Merriweather";
+  margin-bottom: 10px;
   position: absolute;
-  top: 140px;
   left: 270px;
   }
 .book-genre{
   font-size: 1.5em;
   font-family: "Merriweather";
+  margin-bottom: 10px;
   position: absolute;
-  top: 170px;
   left: 270px;
 }
 .book-ISBN10{
   font-size: 1.5em;
   font-family: "Merriweather";
+  margin-bottom: 10px;
   position: absolute;
-  top: 200px;
   left: 270px;
 }
 .book-ISBN13{
   font-size: 1.5em;
   font-family: "Merriweather";
+  margin-bottom: 10px;
   position: absolute;
-  top: 230px;
   left: 270px;
 }
 .account {
@@ -340,6 +340,15 @@ textarea {
 }
 .add-to-library {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  width: 50px;
+  height: 35px;
+  right: 10px;
+  margin: auto;
+  background-color: #006989;
+  color: #cccccc;
+  text-decoration: none;
+  border: 3px solid #006989;
+}
+.add-to-library:hover {
+  background-color: #333333;
 }
