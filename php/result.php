@@ -51,7 +51,19 @@
                 
                 sqlsrv_close( $conn );
                 if (!empty($_SESSION['user'])){
-                    echo '<div class="add-to-library"><a href="addToLibrary.php?q='.$ISBN13.'">add to my library</a></div>';
+                    $userID = $_SESSION['user']['userID'];
+                    $sql = "SELECT * FROM userlibrary AS l WHERE l.userID = ? AND b.ISBN13 = ?";
+                    $params = array( &$userID, &$ISBN13 );
+                    $stmt = sqlsrv_query( $conn, $sql, $params);
+                    if( $stmt === false ){
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
+                    if($row) {
+                        echo '<div class="remove-from-library"><a href="removeFromLibrary.php?q='.$ISBN13.'">remove from my library</a></div>';
+                    } else {
+                        echo '<div class="add-to-library"><a href="addToLibrary.php?q='.$ISBN13.'">add to my library</a></div>';
+                    }
                 }
             ?>
             

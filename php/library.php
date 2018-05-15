@@ -50,7 +50,7 @@
         die( print_r( sqlsrv_errors(), true) );
     }
     while ( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            echo '<li class="library-book"><a class="library-book-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a><i class="material-icons">menu</i></li>';
+            echo '<li class="library-book"><a class="library-book-link" href="result.php?ISBN13='.$row['ISBN13'].'">'.$row['title'].', '.$row['author'].', '.$row['genreName'].'</a></li>';
     }
 
 
