@@ -5,7 +5,7 @@
 
     $userID = $_SESSION['user']['userID'];
     $ISBN13 = $_GET['q'];
-    $sql = "DELETE FROM userlibrary WHERE l.userID = ? AND l.ISBN13 = ?";
+    $sql = "DELETE FROM userlibrary AS l WHERE l.userID = ? AND l.ISBN13 = ?";
     $params = array( &$userID, &$ISBN13 );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){
