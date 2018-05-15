@@ -57,7 +57,7 @@
     
     sqlsrv_close( $conn );
 ?>
-                <li class="addBooks"><p>can't find what you're looking for?</p><a class="search-more-options" href="advancedSearch.php">advanced search</a> or <a class="search-more-options" href="addBooks.php">add a book</a><li>
+                <li class="addBooks"><p>can't find what you're looking for?</p><a class="search-more-options" href="addBooks.php">add a book</a><li>
             </ul>
         </div>
        
