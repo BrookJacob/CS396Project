@@ -28,11 +28,6 @@
                 ?>
             </ul>
         </div>
-        <div class="results-search-bar">
-            <form class="main-search-bar" name="search" action="search.php?go" method="post">
-                <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre" autocomplete="off">
-            </form>	
-        </div>
         <ul class="my-library">
 <?php
 
