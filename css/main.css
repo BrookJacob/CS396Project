@@ -344,7 +344,7 @@ textarea {
   background-color: #333333;
   color: #006989;
 }
-.add-to-library a {
+.remove-from-library a {
   display: block;
   height: 47px;
   padding: 0px 5px;
