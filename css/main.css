@@ -333,12 +333,13 @@ textarea {
   border: 3px solid #006989;
 }
 .add-to-library:hover {
-  background-color: #006989;
+  background-color: #333333;
+  color: #006989;
 }
 .add-to-library a {
   display: block;
   height: 50px;
-  padding: 3px 16px;
+  padding: 0 5px;
   text-align: center;
   text-decoration: none;
   color: #cccccc;
