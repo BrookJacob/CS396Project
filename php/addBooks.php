@@ -53,7 +53,7 @@
                         $ISBN10 = $_POST['ISBN10'];
                         $ISBN13 = $_POST['ISBN13'];
 
-                        $sql = "SELECT * FROM genres WHERE genreName = ?";
+                        $sql = "SELECT * FROM genres AS g WHERE g.genreName = ?";
                         echo 'i get this far';
                         $params = array( &$genre );
                         $stmt = sqlsrv_query( $conn, $sql, $params );
