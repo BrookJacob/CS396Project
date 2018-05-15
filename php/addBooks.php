@@ -46,12 +46,12 @@
                     if(empty($_POST['title']) && empty($_POST['author']) && empty($_POST['genre']) && empty($_POST['publisher']) && empty($_POST['ISBN10']) && empty($_POST['ISBN13'])) {
                         echo 'all fields are required';
                     } else {
-                        $title = $_POST['title'];
-                        $author = $_POST['author'];
-                        $genre = $_POST['genre'];
-                        $publisher = $_POST['publisher'];
-                        $ISBN10 = $_POST['ISBN10'];
-                        $ISBN13 = $_POST['ISBN13'];
+                        $title = trim($_POST['title']);
+                        $author = trim($_POST['author']);
+                        $genre = trim($_POST['genre']);
+                        $publisher = trim($_POST['publisher']);
+                        $ISBN10 = trim($_POST['ISBN10']);
+                        $ISBN13 = trim($_POST['ISBN13']);
 
                         $sql = "SELECT * FROM genres AS g WHERE g.genreName = ?";
                         echo 'i get this far';
