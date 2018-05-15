@@ -80,6 +80,7 @@
 
                     $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
                     $genreID = $row['genreID'];
+                    echo $genreID;
                     $sql = "INSERT INTO books ( ISBN10, ISBN13, author, title, genreID, publisher ) VALUES ( ?, ?, ?, ?, ?, ? )";
                     $params = array( &$ISBN10, &$ISBN13, &$author, &$title, &$genreID, &$publisher );
                     $stmt = sqlsrv_query( $GLOBALS['conn'], $sql, $params );
