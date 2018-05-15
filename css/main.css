@@ -330,20 +330,4 @@ textarea {
   height: 50px;
   background-color: #006989;
   border: 3px solid #006989;
-  text-align: center;
-}
-.add-to-library:hover {
-  background-color: #333333;
-  color: #006989;
-}
-.add-to-library a {
-  position: absolute;
-  text-decoration: none;
-  color: #cccccc;
-  width: 128px;
-  height:40px;
-  margin: auto;
-}
-.add-to-library:hover a {
-
 }
