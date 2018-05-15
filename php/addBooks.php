@@ -29,7 +29,7 @@
             </ul>
         </div>
         <div class="add-result">
-            <form class="add-results" action="addBook()" method="post">
+            <form class="add-results" action="addBooks.php" method="post">
                 <input class="add-results-input" type="text" placeholder="Book Title" name="title">
                 <input class="add-results-input" type="text" placeholder="Author" name="author">
                 <input class="add-results-input" type="text" placeholder="Genre" name="genre"><br>
@@ -42,7 +42,6 @@
         <?php
                 require("common.php");
 
-                function addBook(){
                     if(!empty($_POST['Book Title']) && !empty($_POST['Author']) && !empty($_POST['Genre']) && !empty($_POST['Publisher']) && !empty($_POST['ISBN10'] && $_POST['ISBN13'])) {
                         $genreName = $_POST['genre'];
 
@@ -85,10 +84,6 @@
                         echo 'all fields are required';
                     }
                 }
-                if(isset($_POST['submit'])){
-                    addBooks();
-                }
-
         ?>
     </body>
 </html>
