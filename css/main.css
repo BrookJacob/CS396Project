@@ -340,15 +340,17 @@ textarea {
 }
 .add-to-library {
   position: absolute;
-  width: 50px;
-  height: 35px;
+  width: 100px;
+  height: 70px;
   right: 10px;
   margin: auto;
   background-color: #006989;
-  color: #cccccc;
-  text-decoration: none;
   border: 3px solid #006989;
 }
 .add-to-library:hover {
   background-color: #333333;
+}
+.add-to-library a {
+  text-decoration: none;
+  color: #cccccc;
 }
