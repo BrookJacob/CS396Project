@@ -328,16 +328,17 @@ textarea {
 .add-to-library {
   width: 130px;
   height: 50px;
-  margin: auto;
   background-color: #006989;
   border: 3px solid #006989;
   text-align: center;
 }
-.add-to-library:hover + .add-to-library a {
+.add-to-library:hover {
   background-color: #333333;
+  color: #006989;
 }
 .add-to-library a {
   text-decoration: none;
   color: #cccccc;
+  width: 128px;
   margin: auto;
 }
