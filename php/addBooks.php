@@ -29,7 +29,7 @@
             </ul>
         </div>
         <div class="add-result">
-            <form class="add-results" action="addBooks.php" method="post">
+            <form class="add-results" action="addBooks()" method="post">
                 <input class="add-results-input" type="text" placeholder="Book Title" name="title">
                 <input class="add-results-input" type="text" placeholder="Author" name="author">
                 <input class="add-results-input" type="text" placeholder="Genre" name="genre"><br>
@@ -42,47 +42,9 @@
         <?php
                 require("common.php");
 
-                    if(!empty($_POST['Book Title']) && !empty($_POST['Author']) && !empty($_POST['Genre']) && !empty($_POST['Publisher']) && !empty($_POST['ISBN10'] && $_POST['ISBN13'])) {
-                        $genreName = $_POST['genre'];
-
-                        $sql = "SELECT 1 FROM genres WHERE genreName = ?";
-                        $params = array( &$genreName);
-                        $stmt = sqlsrv_query( $conn, $sql, $params);
-                        if( $stmt === false ){
-                            die( print_r( sqlsrv_errors(), true) );
-                        }
-                        if ($stmt === true) {
-                            $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
-                            $genreID = $row['genreID'];
-                        } else {
-                            $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
-                            $sql = "INSERT INTO genres (genreName) VAlUES (?)";
-                            $params = array( &$genreName );
-                            $stmt = sqlsrv_query( $conn, $sql, $parms );
-                            if( $stmt === false ){
-                                die( print_r( sqlsrv_errors(), true) );
-                            }
-                        }
-
-                    
-                    
-                        $ISBN10 = $_POST['ISBN10'];
-                        $ISBN13 = $_POST['ISBN13'];
-                        $author = $_POST['author'];
-                        $title = $_POST['title'];
-                        $publisher = $_POST['publisher'];
-                        $sql = "INSERT INTO books ( ISBN10, ISBN13, author, title, genreID, publisher ) VALUES ( ?, ?, ?, ?, ?, ? )";
-                        $params = array( &$ISBN10, &$ISBN13, &$author, &$title, &$genreID, &$publisher );
-                        $stmt = sqlsrv_query( $conn, $sql, $params );
-                        if( $stmt === false ){
-                            die( print_r( sqlsrv_errors(), true) );
-                        } else {
-                            header("Location: search.php#result?q=".$ISBN13."");
-                            die("Redirecting to: search.php#result?q=".$ISBN13."");
-                        }
-                    } else {
-                        echo 'all fields are required';
-                    }
+                function addBooks() {
+                    echo 'hello';
+                }
         ?>
     </body>
 </html>
