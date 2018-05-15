@@ -47,7 +47,7 @@
                     die( print_r( sqlsrv_errors(), true) );
                 }
                 $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC );
-                echo '<div class="book-title">'.$row['title'].'</div><div class="book-author">'.$row['author'].'</div><div class="book-genre">'.$row['genreName'].'</div><div class="book-ISBN10">'.$row['ISBN10'].'</div><div class="book-ISBN13">'.$row['ISBN13'].'</div><div class="book-publisher">'.$row['publisher'].'</div>';
+                echo '<div class="book-title">'.$row['title'].'</div><br /><div class="book-author">'.$row['author'].'</div><br /><div class="book-genre">'.$row['genreName'].'</div><br /><div class="book-ISBN10">'.$row['ISBN10'].'</div><br /><div class="book-ISBN13">'.$row['ISBN13'].'</div><br /><div class="book-publisher">'.$row['publisher'].'</div>';
                 
                 sqlsrv_close( $conn );
             ?>
