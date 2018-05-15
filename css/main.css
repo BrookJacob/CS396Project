@@ -328,7 +328,7 @@ textarea {
 .add-to-library {
   width: 130px;
   height: 50px;
-  margin: auto;
+  margin: 10px auto;
   background-color: #006989;
   border: 3px solid #006989;
 }
@@ -338,7 +338,7 @@ textarea {
 .add-to-library a {
   display: block;
   height: 50px;
-  padding: 14px 16px;
+  padding: 3px 16px;
   text-align: center;
   text-decoration: none;
   color: #cccccc;
