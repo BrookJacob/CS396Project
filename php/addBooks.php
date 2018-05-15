@@ -55,9 +55,6 @@
                         $ISBN13 = trim($_POST['ISBN13']);
 
                         $sql = "SELECT * FROM genres AS g WHERE g.genreName = ?";
-                        echo 'i get this far ';
-                        echo $genre;
-                        echo $conn;
                         $params = array( &$genre );
                         $stmt = sqlsrv_query( $GLOBALS['conn'], $sql, $params );
                         if( $stmt === false ) {
