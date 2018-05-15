@@ -31,8 +31,7 @@
         <div class="searchdiv">
             <form class="main-search-bar" name="search" action="php/search.php?go" method="post">
                 <input class="main-search-bar" type="text" name="main-search-bar" placeholder="isbn, title, author, genre" autocomplete="off">
-            </form>
-            <div class="live-results"></div>	
+            </form>	
         </div>
         <div class="about" id="about">
 			<p class="product-description">library books is a book review aggregation website that provides users with ratings for a given book from various sources on the internet. users will be able to add books to a personal virtual library and view recommendations based on their library.</p>
@@ -57,30 +56,5 @@
 				<input class="feedback-input submit" type="submit" name="Submit" value="Submit" >
 			</form>
         </div>
-        <script>
-            function fill(Value){
-                $(".main-search-bar").val(Value);
-                $(".live-results").hide();
-            }
-            $(document).ready(function(){
-                $(".main-search-bar").keyup(function(){
-                    var q = $("main-search-bar").val();
-                    if(q == ""){
-                        $(".live-results").html("");
-                    } else {
-                        $.ajax({
-                            type: "POST",
-                            url: "php/liveResults.php",
-                            data: {
-                                search: q
-                            },
-                            success: function(html) {
-                                $(".live-results").html(html).show();
-                            }
-                        });
-                    }
-                });
-            });
-        </script>
     </body>
 </html>

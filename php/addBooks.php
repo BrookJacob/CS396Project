@@ -70,10 +70,16 @@
                     header("Location: search.php#result?q=".$ISBN13."");
                     die("Redirecting to: search.php#result?q=".$ISBN13."");
                 } else {
-                    $sql = "INSERT INTO genres ( genreName ) VALUES ( ? ); SELECT genreID FROM genres WHERE genreName = ?";
+                    $sql = "INSERT INTO genres ( genreName ) VALUES ( ? )";
                     $params = array( &$genre, &$genre );
                     $stmt = sqlsrv_query( $GLOBALS['conn'], $sql, $params );
-                    
+                    if( $stmt === false ) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+
+                    $sql = "SELECT genreID FROM genres WHERE genreName = ?";
+                    $params = array( &$genre );
+                    $stmt = sqlsrv_query( $GLOBALS['conn'], $sql, $params );
                     if( $stmt === false ) {
                         die( print_r( sqlsrv_errors(), true) );
                     }
