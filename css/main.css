@@ -338,9 +338,10 @@ textarea {
 }
 .add-to-library a {
   display: block;
-  height: 50px;
-  padding: 3px 5px;
+  height: 47px;
+  padding: 6px 5px;
   text-align: center;
+  font-family: "Merriweather";
   text-decoration: none;
   color: #cccccc;
 }
