@@ -40,7 +40,7 @@
 	require("common.php");
     $search = $_POST['main-search-bar'];
     $likeSearch = '%'.$search.'%';
-	$sql = "SELECT b.ISBN10, b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g WHERE b.title LIKE ? OR b.author LIKE ? OR b.ISBN13 = ? OR b.ISBN10 = ? OR g.genreName LIKE ? FULL OUTER JOIN genres ON b.genreID = g.genreID";
+	$sql = "SELECT b.ISBN10, b.ISBN13, b.title, b.author, g.genreName FROM books AS b, genres as g FULL OUTER JOIN genres ON b.genreID = g.genreID WHERE b.title LIKE ? OR b.author LIKE ? OR b.ISBN13 = ? OR b.ISBN10 = ? OR g.genreName LIKE ?";
     $params = array( &$likeSearch, &$likeSearch, &$search, &$search, &$likeSearch );
     $stmt = sqlsrv_query( $conn, $sql, $params );
     if( $stmt === false ){
